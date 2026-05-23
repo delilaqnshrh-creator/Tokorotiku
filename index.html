@@ -1,692 +1,2985 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="id">
+
+
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Frost — Cool treats for warm hearts. Handcrafted ice cream, gelato, and frozen desserts made with locally sourced ingredients.">
-  <meta name="keywords" content="ice cream, gelato, frozen desserts, bakery, catering, handcrafted treats">
-  <meta name="author" content="Frost Desserts">
-  <meta property="og:title" content="Frost — Cool Treats for Warm Hearts">
-  <meta property="og:description" content="Handcrafted ice cream, gelato, and frozen desserts made with locally sourced ingredients.">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <title>Frost — Cool Treats for Warm Hearts</title>
 
-  <!-- Google Fonts: Lora + Manrope -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="templatemo-frost-style.css">
-<!--
+    <meta charset="UTF-8">
 
-TemplateMo 613 Frost Bakery
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-https://templatemo.com/tm-613-frost-bakery
+    <title>Tokorotiku - Roti Fresh Setiap Hari</title>
 
--->
+    <meta name="description" content="Tokorotiku adalah toko roti dan kue yang dibuat fresh setiap hari dengan bahan berkualitas tinggi.">
+
+
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+
+    <!-- Bootstrap 5 -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <!-- Font Awesome -->
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+
+
+    <!-- Template Frost CSS -->
+
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/delilaqnshrh-creator/toko-rotiku/main/templatemo-frost-style.css">
+
+
+
+    <style>
+
+        /* ============================
+
+           TOKOROTIKU CUSTOM OVERRIDES
+
+           ============================ */
+
+        :root {
+
+            --cream: #FFF8E7;
+
+            --cream-dark: #F0DFC0;
+
+            --brown-dark: #5C3D2E;
+
+            --brown-medium: #8B5E3C;
+
+            --brown-light: #A0714F;
+
+            --gold: #D4A574;
+
+            --gold-soft: #E8C99B;
+
+            --white-bakery: #FFFDF8;
+
+            --text-dark: #3E2723;
+
+            --text-medium: #6D4C41;
+
+            --text-light: #8D6E63;
+
+            --shadow-soft: 0 4px 24px rgba(92, 61, 46, 0.10);
+
+            --shadow-card: 0 8px 32px rgba(92, 61, 46, 0.12);
+
+        }
+
+
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+
+        body {
+
+            font-family: 'DM Sans', sans-serif;
+
+            background-color: var(--cream);
+
+            color: var(--text-dark);
+
+            overflow-x: hidden;
+
+        }
+
+
+
+        h1, h2, h3, h4, h5 {
+
+            font-family: 'Playfair Display', serif;
+
+        }
+
+
+
+        /* ---- NAVBAR ---- */
+
+        .navbar-custom {
+
+            background: rgba(255, 248, 231, 0.92);
+
+            backdrop-filter: blur(16px);
+
+            -webkit-backdrop-filter: blur(16px);
+
+            border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+
+            transition: all 0.4s ease;
+
+            padding: 12px 0;
+
+        }
+
+
+
+        .navbar-custom.scrolled {
+
+            background: rgba(255, 248, 231, 0.98);
+
+            box-shadow: 0 2px 20px rgba(92, 61, 46, 0.1);
+
+            padding: 8px 0;
+
+        }
+
+
+
+        .navbar-brand-custom {
+
+            font-family: 'Playfair Display', serif;
+
+            font-weight: 700;
+
+            font-size: 1.6rem;
+
+            color: var(--brown-dark) !important;
+
+            text-decoration: none;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+        }
+
+
+
+        .navbar-brand-custom i {
+
+            color: var(--gold);
+
+            font-size: 1.4rem;
+
+        }
+
+
+
+        .nav-link-custom {
+
+            color: var(--text-medium) !important;
+
+            font-weight: 500;
+
+            font-size: 0.95rem;
+
+            padding: 8px 18px !important;
+
+            border-radius: 8px;
+
+            transition: all 0.3s ease;
+
+            position: relative;
+
+        }
+
+
+
+        .nav-link-custom:hover,
+
+        .nav-link-custom.active {
+
+            color: var(--brown-dark) !important;
+
+            background: rgba(212, 165, 116, 0.15);
+
+        }
+
+
+
+        .nav-link-custom::after {
+
+            content: '';
+
+            position: absolute;
+
+            bottom: 4px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 0;
+
+            height: 2px;
+
+            background: var(--gold);
+
+            border-radius: 2px;
+
+            transition: width 0.3s ease;
+
+        }
+
+
+
+        .nav-link-custom:hover::after,
+
+        .nav-link-custom.active::after {
+
+            width: 24px;
+
+        }
+
+
+
+        /* ---- HERO ---- */
+
+        .hero-section {
+
+            position: relative;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            overflow: hidden;
+
+        }
+
+
+
+        .hero-bg {
+
+            position: absolute;
+
+            inset: 0;
+
+            z-index: 0;
+
+        }
+
+
+
+        .hero-bg img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            filter: blur(2px) brightness(0.55);
+
+            transform: scale(1.05);
+
+        }
+
+
+
+        .hero-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            background: linear-gradient(135deg, rgba(62, 39, 35, 0.7) 0%, rgba(92, 61, 46, 0.5) 50%, rgba(139, 94, 60, 0.4) 100%);
+
+            z-index: 1;
+
+        }
+
+
+
+        .hero-glow {
+
+            position: absolute;
+
+            top: 50%;
+
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            width: 600px;
+
+            height: 600px;
+
+            background: radial-gradient(circle, rgba(232, 201, 155, 0.25) 0%, transparent 70%);
+
+            border-radius: 50%;
+
+            z-index: 2;
+
+            animation: pulseGlow 4s ease-in-out infinite;
+
+        }
+
+
+
+        @keyframes pulseGlow {
+
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+
+            50% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+
+        }
+
+
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 3;
+
+            text-align: center;
+
+            padding: 0 20px;
+
+            max-width: 800px;
+
+        }
+
+
+
+        .hero-badge {
+
+            display: inline-block;
+
+            background: rgba(212, 165, 116, 0.2);
+
+            border: 1px solid rgba(212, 165, 116, 0.4);
+
+            color: var(--gold-soft);
+
+            padding: 6px 20px;
+
+            border-radius: 50px;
+
+            font-size: 0.85rem;
+
+            font-weight: 500;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 24px;
+
+            backdrop-filter: blur(8px);
+
+        }
+
+
+
+        .hero-title {
+
+            font-family: 'Playfair Display', serif;
+
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+
+            font-weight: 700;
+
+            color: #FFFFFF;
+
+            line-height: 1.2;
+
+            margin-bottom: 20px;
+
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+
+        }
+
+
+
+        .hero-title span { color: var(--gold-soft); }
+
+
+
+        .hero-subtitle {
+
+            font-size: clamp(1rem, 2vw, 1.2rem);
+
+            color: rgba(255, 255, 255, 0.85);
+
+            font-weight: 400;
+
+            line-height: 1.7;
+
+            margin-bottom: 36px;
+
+            max-width: 600px;
+
+            margin-left: auto;
+
+            margin-right: auto;
+
+        }
+
+
+
+        .hero-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            background: linear-gradient(135deg, var(--gold), var(--brown-light));
+
+            color: #FFFFFF;
+
+            padding: 14px 36px;
+
+            border-radius: 50px;
+
+            font-weight: 600;
+
+            font-size: 1rem;
+
+            text-decoration: none;
+
+            transition: all 0.3s ease;
+
+            box-shadow: 0 4px 20px rgba(212, 165, 116, 0.4);
+
+            border: none;
+
+            cursor: pointer;
+
+        }
+
+
+
+        .hero-btn:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 8px 30px rgba(212, 165, 116, 0.5);
+
+            color: #FFFFFF;
+
+        }
+
+
+
+        .hero-scroll {
+
+            position: absolute;
+
+            bottom: 40px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            z-index: 3;
+
+            color: rgba(255,255,255,0.6);
+
+            font-size: 1.4rem;
+
+            animation: bounceDown 2s infinite;
+
+        }
+
+
+
+        @keyframes bounceDown {
+
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+
+            40% { transform: translateX(-50%) translateY(10px); }
+
+            60% { transform: translateX(-50%) translateY(5px); }
+
+        }
+
+
+
+        /* ---- SECTION COMMON ---- */
+
+        .section-padding { padding: 100px 0; }
+
+        .section-header { text-align: center; margin-bottom: 60px; }
+
+        .section-label {
+
+            display: inline-block;
+
+            color: var(--gold);
+
+            font-weight: 600;
+
+            font-size: 0.85rem;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+
+        }
+
+        .section-title {
+
+            font-family: 'Playfair Display', serif;
+
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+
+            font-weight: 700;
+
+            color: var(--brown-dark);
+
+            margin-bottom: 16px;
+
+        }
+
+        .section-divider {
+
+            width: 60px;
+
+            height: 3px;
+
+            background: linear-gradient(to right, var(--gold), var(--brown-light));
+
+            border-radius: 3px;
+
+            margin: 0 auto 20px;
+
+        }
+
+        .section-desc {
+
+            color: var(--text-light);
+
+            font-size: 1.05rem;
+
+            max-width: 560px;
+
+            margin: 0 auto;
+
+            line-height: 1.7;
+
+        }
+
+
+
+        /* ---- MENU / PRODUK ---- */
+
+        .menu-section { background: var(--white-bakery); }
+
+
+
+        .menu-card {
+
+            background: #FFFFFF;
+
+            border-radius: 16px;
+
+            overflow: hidden;
+
+            box-shadow: var(--shadow-soft);
+
+            transition: all 0.4s ease;
+
+            border: 1px solid rgba(212, 165, 116, 0.1);
+
+            height: 100%;
+
+            display: flex;
+
+            flex-direction: column;
+
+        }
+
+
+
+        .menu-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow: var(--shadow-card);
+
+        }
+
+
+
+        .menu-card-img {
+
+            position: relative;
+
+            overflow: hidden;
+
+            height: 220px;
+
+        }
+
+
+
+        .menu-card-img img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: transform 0.6s ease;
+
+        }
+
+
+
+        .menu-card:hover .menu-card-img img {
+
+            transform: scale(1.08);
+
+        }
+
+
+
+        .menu-card-badge {
+
+            position: absolute;
+
+            top: 12px;
+
+            left: 12px;
+
+            background: linear-gradient(135deg, #D4A574, #C8956C);
+
+            color: #FFFFFF;
+
+            padding: 4px 14px;
+
+            border-radius: 50px;
+
+            font-size: 0.75rem;
+
+            font-weight: 700;
+
+            letter-spacing: 0.5px;
+
+            box-shadow: 0 2px 10px rgba(212, 165, 116, 0.4);
+
+            z-index: 2;
+
+        }
+
+
+
+        .menu-card-body {
+
+            padding: 24px;
+
+            flex-grow: 1;
+
+            display: flex;
+
+            flex-direction: column;
+
+        }
+
+
+
+        .menu-card-title {
+
+            font-family: 'Playfair Display', serif;
+
+            font-size: 1.2rem;
+
+            font-weight: 600;
+
+            color: var(--brown-dark);
+
+            margin-bottom: 6px;
+
+        }
+
+
+
+        .menu-card-price {
+
+            color: var(--brown-light);
+
+            font-weight: 700;
+
+            font-size: 1.1rem;
+
+            margin-bottom: 10px;
+
+        }
+
+
+
+        .menu-card-desc {
+
+            color: var(--text-light);
+
+            font-size: 0.9rem;
+
+            line-height: 1.6;
+
+            margin-bottom: 16px;
+
+            flex-grow: 1;
+
+        }
+
+
+
+        /* ---- PRODUK ACTION (PENAMBAHAN KERANJANG) ---- */
+
+        .product-actions {
+
+            border-top: 1px solid rgba(212, 165, 116, 0.15);
+
+            padding-top: 16px;
+
+            margin-top: auto;
+
+        }
+
+
+
+        .qty-control {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 16px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+
+        .qty-btn {
+
+            width: 32px;
+
+            height: 32px;
+
+            border-radius: 50%;
+
+            border: 2px solid var(--gold);
+
+            background: transparent;
+
+            color: var(--brown-dark);
+
+            font-size: 1rem;
+
+            font-weight: 700;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            cursor: pointer;
+
+            transition: all 0.2s ease;
+
+        }
+
+
+
+        .qty-btn:hover {
+
+            background: var(--gold);
+
+            color: #FFFFFF;
+
+        }
+
+
+
+        .qty-val {
+
+            font-weight: 700;
+
+            font-size: 1.1rem;
+
+            min-width: 20px;
+
+            text-align: center;
+
+            color: var(--brown-dark);
+
+        }
+
+
+
+        .add-to-cart-btn {
+
+            width: 100%;
+
+            padding: 10px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: var(--brown-dark);
+
+            color: #FFFFFF;
+
+            font-weight: 600;
+
+            font-size: 0.9rem;
+
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+
+        }
+
+
+
+        .add-to-cart-btn:hover {
+
+            background: var(--brown-medium);
+
+            transform: translateY(-2px);
+
+        }
+
+
+
+        /* ---- PROMO ---- */
+
+        .promo-section { background: var(--cream); position: relative; }
+
+
+
+        .promo-card {
+
+            background: #FFFFFF;
+
+            border-radius: 16px;
+
+            padding: 40px 30px;
+
+            text-align: center;
+
+            box-shadow: var(--shadow-soft);
+
+            border: 2px dashed var(--gold-soft);
+
+            transition: all 0.4s ease;
+
+            position: relative;
+
+            overflow: hidden;
+
+            height: 100%;
+
+        }
+
+
+
+        .promo-card::before {
+
+            content: '';
+
+            position: absolute;
+
+            top: -50px; right: -50px;
+
+            width: 120px; height: 120px;
+
+            background: radial-gradient(circle, rgba(232, 201, 155, 0.2), transparent 70%);
+
+            border-radius: 50%;
+
+        }
+
+
+
+        .promo-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow: var(--shadow-card);
+
+            border-color: var(--gold);
+
+        }
+
+
+
+        .promo-icon {
+
+            width: 70px; height: 70px;
+
+            background: linear-gradient(135deg, var(--cream), var(--gold-soft));
+
+            border-radius: 50%;
+
+            display: flex; align-items: center; justify-content: center;
+
+            margin: 0 auto 20px;
+
+            color: var(--brown-dark);
+
+            font-size: 1.8rem;
+
+        }
+
+
+
+        .promo-title {
+
+            font-family: 'Playfair Display', serif;
+
+            font-size: 1.5rem; font-weight: 700;
+
+            color: var(--brown-dark); margin-bottom: 8px;
+
+        }
+
+
+
+        .promo-desc {
+
+            color: var(--text-light); font-size: 0.95rem;
+
+            line-height: 1.7; margin-bottom: 16px;
+
+        }
+
+
+
+        .promo-highlight { font-weight: 700; color: var(--brown-medium); }
+
+
+
+        .promo-tag {
+
+            display: inline-block;
+
+            background: var(--brown-dark); color: var(--gold-soft);
+
+            padding: 6px 16px; border-radius: 50px;
+
+            font-size: 0.8rem; font-weight: 700; letter-spacing: 0.5px;
+
+        }
+
+
+
+        /* ---- TENTANG KAMI ---- */
+
+        .about-section { background: var(--white-bakery); position: relative; }
+
+
+
+        .about-img-wrapper {
+
+            position: relative; border-radius: 20px; overflow: hidden;
+
+            box-shadow: var(--shadow-card);
+
+        }
+
+        .about-img-wrapper img { width: 100%; height: 400px; object-fit: cover; }
+
+        .about-img-overlay {
+
+            position: absolute; inset: 0;
+
+            background: linear-gradient(to top, rgba(92, 61, 46, 0.3), transparent 50%);
+
+        }
+
+
+
+        .about-feature { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px; }
+
+        .about-feature-icon {
+
+            flex-shrink: 0; width: 48px; height: 48px;
+
+            background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+
+            color: #FFFFFF; font-size: 1.1rem;
+
+        }
+
+        .about-feature h5 {
+
+            font-family: 'Playfair Display', serif; font-size: 1.05rem;
+
+            color: var(--brown-dark); margin-bottom: 4px;
+
+        }
+
+        .about-feature p { color: var(--text-light); font-size: 0.9rem; margin: 0; line-height: 1.6; }
+
+
+
+        /* ---- VIDEO ---- */
+
+        .video-section { background: var(--brown-dark); position: relative; overflow: hidden; }
+
+        .video-section::before {
+
+            content: ''; position: absolute; top: -100px; right: -100px;
+
+            width: 400px; height: 400px;
+
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.1), transparent 70%);
+
+            border-radius: 50%;
+
+        }
+
+        .video-section .section-label { color: var(--gold-soft); }
+
+        .video-section .section-title { color: #FFFFFF; }
+
+        .video-section .section-desc { color: rgba(255, 255, 255, 0.7); }
+
+
+
+        .video-wrapper {
+
+            position: relative; padding-bottom: 56.25%; height: 0;
+
+            border-radius: 16px; overflow: hidden;
+
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+
+        }
+
+        .video-wrapper iframe {
+
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
+
+        }
+
+
+
+        /* ---- TESTIMONI ---- */
+
+        .testi-section { background: var(--cream); }
+
+        .testi-card {
+
+            background: #FFFFFF; border-radius: 16px; padding: 32px;
+
+            box-shadow: var(--shadow-soft); border: 1px solid rgba(212, 165, 116, 0.1);
+
+            transition: all 0.3s ease; height: 100%;
+
+        }
+
+        .testi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
+
+        .testi-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 16px; }
+
+        .testi-text {
+
+            color: var(--text-medium); font-size: 1rem; line-height: 1.7;
+
+            font-style: italic; margin-bottom: 20px; position: relative;
+
+        }
+
+        .testi-text::before {
+
+            content: '\201C'; font-family: 'Playfair Display', serif;
+
+            font-size: 3rem; color: var(--gold-soft);
+
+            position: absolute; top: -16px; left: -4px; opacity: 0.5;
+
+        }
+
+        .testi-author { display: flex; align-items: center; gap: 12px; }
+
+        .testi-avatar {
+
+            width: 44px; height: 44px; border-radius: 50%;
+
+            background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+
+            display: flex; align-items: center; justify-content: center;
+
+            color: #FFFFFF; font-weight: 700; font-size: 1rem;
+
+        }
+
+        .testi-name { font-weight: 600; color: var(--brown-dark); font-size: 0.95rem; }
+
+
+
+        /* ---- LOKASI ---- */
+
+        .location-section { background: var(--white-bakery); }
+
+        .map-wrapper {
+
+            border-radius: 16px; overflow: hidden;
+
+            box-shadow: var(--shadow-card); border: 3px solid rgba(212, 165, 116, 0.2);
+
+        }
+
+        .map-wrapper iframe { width: 100%; height: 400px; border: none; }
+
+        .location-info { display: flex; flex-direction: column; gap: 24px; }
+
+        .location-item { display: flex; align-items: flex-start; gap: 16px; }
+
+        .location-item-icon {
+
+            flex-shrink: 0; width: 48px; height: 48px;
+
+            background: linear-gradient(135deg, var(--cream), var(--cream-dark));
+
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+
+            color: var(--brown-medium); font-size: 1.1rem;
+
+        }
+
+        .location-item h5 {
+
+            font-family: 'Playfair Display', serif; font-size: 1rem;
+
+            color: var(--brown-dark); margin-bottom: 4px;
+
+        }
+
+        .location-item p { color: var(--text-light); font-size: 0.9rem; margin: 0; }
+
+
+
+        /* ---- KONTAK / CTA ---- */
+
+        .cta-section {
+
+            background: linear-gradient(135deg, var(--brown-dark) 0%, var(--brown-medium) 100%);
+
+            position: relative; overflow: hidden;
+
+        }
+
+        .cta-section::before {
+
+            content: ''; position: absolute; bottom: -150px; left: -150px;
+
+            width: 500px; height: 500px;
+
+            background: radial-gradient(circle, rgba(232, 201, 155, 0.08), transparent 70%);
+
+            border-radius: 50%;
+
+        }
+
+        .cta-section::after {
+
+            content: ''; position: absolute; top: -100px; right: -100px;
+
+            width: 350px; height: 350px;
+
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.06), transparent 70%);
+
+            border-radius: 50%;
+
+        }
+
+        .cta-content { position: relative; z-index: 2; text-align: center; }
+
+        .cta-title {
+
+            font-family: 'Playfair Display', serif;
+
+            font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700;
+
+            color: #FFFFFF; margin-bottom: 16px;
+
+        }
+
+        .cta-desc {
+
+            color: rgba(255, 255, 255, 0.75); font-size: 1.05rem;
+
+            max-width: 500px; margin: 0 auto 32px; line-height: 1.7;
+
+        }
+
+        .btn-wa {
+
+            display: inline-flex; align-items: center; gap: 10px;
+
+            background: #25D366; color: #FFFFFF;
+
+            padding: 16px 40px; border-radius: 50px;
+
+            font-weight: 700; font-size: 1.05rem; text-decoration: none;
+
+            transition: all 0.3s ease;
+
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35); border: none;
+
+        }
+
+        .btn-wa:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.45);
+
+            color: #FFFFFF;
+
+        }
+
+        .btn-wa i { font-size: 1.2rem; }
+
+
+
+        /* ---- FOOTER ---- */
+
+        .footer-section {
+
+            background: #2C1810; color: rgba(255, 255, 255, 0.7);
+
+            padding: 60px 0 30px;
+
+        }
+
+        .footer-brand {
+
+            font-family: 'Playfair Display', serif; font-size: 1.5rem;
+
+            font-weight: 700; color: #FFFFFF; margin-bottom: 12px;
+
+        }
+
+        .footer-brand i { color: var(--gold); }
+
+        .footer-desc { font-size: 0.9rem; line-height: 1.7; max-width: 360px; margin-bottom: 24px; }
+
+        .footer-title {
+
+            font-family: 'Playfair Display', serif; font-size: 1.1rem;
+
+            font-weight: 600; color: #FFFFFF; margin-bottom: 20px;
+
+        }
+
+        .footer-link {
+
+            color: rgba(255, 255, 255, 0.6); text-decoration: none;
+
+            font-size: 0.9rem; transition: all 0.3s ease;
+
+            display: block; margin-bottom: 10px;
+
+        }
+
+        .footer-link:hover { color: var(--gold-soft); padding-left: 4px; }
+
+        .footer-social { display: flex; gap: 12px; }
+
+        .footer-social a {
+
+            width: 40px; height: 40px; border-radius: 10px;
+
+            background: rgba(255, 255, 255, 0.08);
+
+            display: flex; align-items: center; justify-content: center;
+
+            color: rgba(255, 255, 255, 0.6); text-decoration: none;
+
+            transition: all 0.3s ease;
+
+        }
+
+        .footer-social a:hover {
+
+            background: var(--gold); color: #FFFFFF; transform: translateY(-3px);
+
+        }
+
+        .footer-bottom {
+
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+            margin-top: 40px; padding-top: 24px;
+
+            text-align: center; font-size: 0.85rem;
+
+        }
+
+
+
+        /* ---- ANIMATIONS ---- */
+
+        .fade-up {
+
+            opacity: 0; transform: translateY(40px);
+
+            transition: opacity 0.8s ease, transform 0.8s ease;
+
+        }
+
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        .fade-left {
+
+            opacity: 0; transform: translateX(-40px);
+
+            transition: opacity 0.8s ease, transform 0.8s ease;
+
+        }
+
+        .fade-left.visible { opacity: 1; transform: translateX(0); }
+
+        .fade-right {
+
+            opacity: 0; transform: translateX(40px);
+
+            transition: opacity 0.8s ease, transform 0.8s ease;
+
+        }
+
+        .fade-right.visible { opacity: 1; transform: translateX(0); }
+
+
+
+        /* ---- BACK TO TOP ---- */
+
+        .back-to-top {
+
+            position: fixed; bottom: 30px; right: 30px;
+
+            width: 48px; height: 48px; border-radius: 14px;
+
+            background: linear-gradient(135deg, var(--gold), var(--brown-light));
+
+            color: #FFFFFF; display: flex; align-items: center; justify-content: center;
+
+            font-size: 1.2rem; cursor: pointer; opacity: 0; visibility: hidden;
+
+            transition: all 0.3s ease;
+
+            box-shadow: 0 4px 16px rgba(212, 165, 116, 0.4); z-index: 998; border: none;
+
+        }
+
+        .back-to-top.show { opacity: 1; visibility: visible; }
+
+        .back-to-top:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(212, 165, 116, 0.5); }
+
+
+
+        /* ============================
+
+           SHOPPING CART STYLES (NEW)
+
+           ============================ */
+
+        .cart-icon-wrapper {
+
+            position: relative;
+
+            cursor: pointer;
+
+            padding: 8px 16px !important;
+
+        }
+
+        .cart-icon-wrapper i { font-size: 1.2rem; color: var(--brown-dark); }
+
+        .cart-badge {
+
+            position: absolute; top: 2px; right: 8px;
+
+            background: var(--brown-medium); color: #fff;
+
+            font-size: 0.65rem; width: 18px; height: 18px;
+
+            border-radius: 50%; display: flex; align-items: center;
+
+            justify-content: center; font-weight: 700;
+
+            transition: transform 0.3s ease;
+
+        }
+
+        .cart-badge.bump { animation: cartBump 0.3s ease; }
+
+        @keyframes cartBump {
+
+            0% { transform: scale(1); }
+
+            50% { transform: scale(1.4); }
+
+            100% { transform: scale(1); }
+
+        }
+
+
+
+        .cart-dropdown {
+
+            position: absolute; top: 100%; right: 0;
+
+            width: 360px; background: #FFFFFF;
+
+            border-radius: 16px; box-shadow: 0 10px 40px rgba(92, 61, 46, 0.2);
+
+            border: 1px solid rgba(212, 165, 116, 0.2);
+
+            z-index: 1000; display: none;
+
+            flex-direction: column; overflow: hidden;
+
+        }
+
+        .cart-dropdown.show { display: flex; animation: fadeInDown 0.3s ease; }
+
+        @keyframes fadeInDown {
+
+            from { opacity: 0; transform: translateY(-10px); }
+
+            to { opacity: 1; transform: translateY(0); }
+
+        }
+
+
+
+        .cart-header {
+
+            padding: 20px; border-bottom: 1px solid rgba(212, 165, 116, 0.15);
+
+            display: flex; justify-content: space-between; align-items: center;
+
+        }
+
+        .cart-header h5 {
+
+            margin: 0; font-size: 1.1rem; color: var(--brown-dark);
+
+        }
+
+        .cart-close-btn {
+
+            background: none; border: none; color: var(--text-light);
+
+            font-size: 1.2rem; cursor: pointer; transition: color 0.2s;
+
+        }
+
+        .cart-close-btn:hover { color: var(--brown-dark); }
+
+
+
+        .cart-body {
+
+            max-height: 320px; overflow-y: auto; padding: 16px;
+
+            flex-grow: 1;
+
+        }
+
+        .cart-body::-webkit-scrollbar { width: 4px; }
+
+        .cart-body::-webkit-scrollbar-thumb { background: var(--cream-dark); border-radius: 4px; }
+
+
+
+        .cart-empty {
+
+            text-align: center; padding: 30px 10px; color: var(--text-light);
+
+        }
+
+        .cart-empty i { font-size: 2.5rem; color: var(--cream-dark); margin-bottom: 12px; display: block; }
+
+
+
+        .cart-item {
+
+            display: flex; gap: 12px; padding: 12px 0;
+
+            border-bottom: 1px solid rgba(212, 165, 116, 0.1);
+
+            align-items: center;
+
+        }
+
+        .cart-item:last-child { border-bottom: none; }
+
+        .cart-item-info { flex-grow: 1; }
+
+        .cart-item-name { font-weight: 600; font-size: 0.9rem; color: var(--brown-dark); margin-bottom: 4px; }
+
+        .cart-item-price { font-size: 0.8rem; color: var(--text-light); }
+
+
+
+        .cart-item-qty {
+
+            display: flex; align-items: center; gap: 8px;
+
+        }
+
+        .cart-qty-btn {
+
+            width: 24px; height: 24px; border-radius: 50%;
+
+            border: 1px solid var(--cream-dark); background: var(--cream);
+
+            color: var(--brown-dark); font-size: 0.75rem;
+
+            display: flex; align-items: center; justify-content: center;
+
+            cursor: pointer; transition: all 0.2s;
+
+        }
+
+        .cart-qty-btn:hover { background: var(--gold-soft); border-color: var(--gold); }
+
+        .cart-qty-val { font-weight: 600; font-size: 0.85rem; min-width: 16px; text-align: center; }
+
+        .cart-item-total {
+
+            font-weight: 700; font-size: 0.9rem;
+
+            color: var(--brown-medium); min-width: 70px; text-align: right;
+
+        }
+
+        .cart-item-remove {
+
+            background: none; border: none; color: #ccc;
+
+            cursor: pointer; font-size: 0.9rem; transition: color 0.2s; padding: 0;
+
+        }
+
+        .cart-item-remove:hover { color: #e74c3c; }
+
+
+
+        .cart-footer {
+
+            padding: 20px; border-top: 1px solid rgba(212, 165, 116, 0.15);
+
+            background: var(--white-bakery);
+
+        }
+
+        .cart-total-row {
+
+            display: flex; justify-content: space-between;
+
+            margin-bottom: 16px;
+
+        }
+
+        .cart-total-label { font-size: 1rem; font-weight: 600; color: var(--brown-dark); }
+
+        .cart-total-price { font-size: 1.1rem; font-weight: 700; color: var(--brown-medium); }
+
+
+
+        .checkout-btn {
+
+            width: 100%; padding: 12px; border: none; border-radius: 8px;
+
+            background: #25D366; color: #FFFFFF; font-weight: 700;
+
+            font-size: 0.95rem; cursor: pointer; display: flex;
+
+            align-items: center; justify-content: center; gap: 8px;
+
+            transition: all 0.3s ease;
+
+        }
+
+        .checkout-btn:hover { background: #20bd5a; transform: translateY(-2px); }
+
+
+
+        @media (max-width: 768px) {
+
+            .section-padding { padding: 70px 0; }
+
+            .menu-card-img { height: 180px; }
+
+            .about-img-wrapper img { height: 280px; }
+
+            .map-wrapper iframe { height: 300px; }
+
+            .hero-glow { width: 350px; height: 350px; }
+
+            .promo-card { padding: 30px 20px; }
+
+            .cart-dropdown { width: 300px; right: -50px; }
+
+        }
+
+
+
+        /* ---- LOADING ---- */
+
+        .preloader {
+
+            position: fixed; inset: 0; background: var(--cream);
+
+            z-index: 9999; display: flex; align-items: center;
+
+            justify-content: center; flex-direction: column; gap: 16px;
+
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+
+        }
+
+        .preloader.hide { opacity: 0; visibility: hidden; }
+
+        .preloader-spinner {
+
+            width: 48px; height: 48px;
+
+            border: 3px solid var(--cream-dark); border-top-color: var(--gold);
+
+            border-radius: 50%; animation: spin 0.8s linear infinite;
+
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .preloader-text {
+
+            font-family: 'Playfair Display', serif; color: var(--brown-dark);
+
+            font-weight: 600; font-size: 1.2rem;
+
+        }
+
+    </style>
+
 </head>
+
+
+
 <body>
 
-  <!-- ==========================================
-       Mobile Hamburger Button
-       ========================================== -->
-  <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-    <div class="hamburger__lines">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </button>
 
-  <!-- Mobile Sidebar Overlay -->
-  <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-  <!-- ==========================================
-       Sidebar Navigation
-       ========================================== -->
-  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
-    <div class="sidebar__brand">
-      <div class="sidebar__logo">Fr<span>o</span>st</div>
-      <div class="sidebar__tagline">Cool Treats for Warm Hearts</div>
+    <!-- ======== PRELOADER ======== -->
+
+    <div class="preloader" id="preloader">
+
+        <div class="preloader-spinner"></div>
+
+        <div class="preloader-text">Tokorotiku</div>
+
     </div>
 
-    <nav class="sidebar__nav">
-      <ul>
-        <li><a href="#hero" class="active"><span class="nav-icon">&#9678;</span> Home</a></li>
-        <li><a href="#flavors"><span class="nav-icon">&#10047;</span> Flavors</a></li>
-        <li><a href="#builder"><span class="nav-icon">&#9733;</span> Build Yours</a></li>
-        <li><a href="#catering"><span class="nav-icon">&#9738;</span> Catering</a></li>
-        <li><a href="#seasonal"><span class="nav-icon">&#10053;</span> Seasonal</a></li>
-        <li><a href="#loyalty"><span class="nav-icon">&#10084;</span> Loyalty</a></li>
-      </ul>
+
+
+    <!-- ======== NAVBAR ======== -->
+
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="mainNav">
+
+        <div class="container">
+
+            <a class="navbar-brand-custom" href="#beranda">
+
+                <i class="fas fa-bread-slice"></i> Tokorotiku
+
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+
+                <i class="fas fa-bars" style="color: var(--brown-dark); font-size: 1.3rem;"></i>
+
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navContent">
+
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+
+                    <li class="nav-item"><a class="nav-link nav-link-custom active" href="#beranda">Beranda</a></li>
+
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="#menu">Menu</a></li>
+
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="#promo">Promo</a></li>
+
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="#tentang">Tentang Kami</a></li>
+
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="#video">Video</a></li>
+
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="#lokasi">Lokasi</a></li>
+
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="#kontak">Kontak</a></li>
+
+                    
+
+                    <!-- CART ICON (NEW) -->
+
+                    <li class="nav-item position-relative">
+
+                        <div class="cart-icon-wrapper" id="cartToggle">
+
+                            <i class="fas fa-shopping-bag"></i>
+
+                            <span class="cart-badge" id="cartBadge">0</span>
+
+                        </div>
+
+                        
+
+                        <!-- CART DROPDOWN (NEW) -->
+
+                        <div class="cart-dropdown" id="cartDropdown">
+
+                            <div class="cart-header">
+
+                                <h5><i class="fas fa-shopping-bag me-2"></i>Keranjang</h5>
+
+                                <button class="cart-close-btn" id="cartClose"><i class="fas fa-times"></i></button>
+
+                            </div>
+
+                            <div class="cart-body" id="cartBody">
+
+                                <div class="cart-empty" id="cartEmpty">
+
+                                    <i class="fas fa-bread-slice"></i>
+
+                                    Keranjang masih kosong
+
+                                </div>
+
+                            </div>
+
+                            <div class="cart-footer">
+
+                                <div class="cart-total-row">
+
+                                    <span class="cart-total-label">Total</span>
+
+                                    <span class="cart-total-price" id="cartTotal">Rp 0</span>
+
+                                </div>
+
+                                <button class="checkout-btn" id="btnCheckout">
+
+                                    <i class="fab fa-whatsapp"></i> Pesan Sekarang
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
     </nav>
 
-    <div class="sidebar__footer">
-      <div class="sidebar__hours">
-        <strong>Hours</strong><br>
-        Mon – Fri: 11am – 9pm<br>
-        Sat – Sun: 10am – 10pm
-      </div>
-    </div>
-  </aside>
 
-  <!-- ==========================================
-       Main Content
-       ========================================== -->
-  <main class="main">
 
-    <!-- ======= HERO ======= -->
-    <section class="hero" id="hero">
-      <div class="hero__content">
-        <div class="hero__badge reveal">Now Scooping</div>
-        <h1 class="hero__title reveal reveal-delay-1">
-          Life's too short for<br><em>boring desserts.</em>
-        </h1>
-        <p class="hero__subtitle reveal reveal-delay-2">
-          Handcrafted ice cream and gelato made fresh every morning with locally sourced milk, seasonal fruits, and a dash of something unexpected.
-        </p>
-        <div class="hero__actions reveal reveal-delay-3">
-          <a href="#flavors" class="btn btn--primary">Explore Flavors</a>
-          <a href="#catering" class="btn btn--outline">Book a Cart</a>
-        </div>
-      </div>
+    <!-- ======== HERO ======== -->
 
-      <!-- Decorative ice cream scoops -->
-      <div class="hero__deco" aria-hidden="true">
-        <div class="scoop scoop--strawberry">
-          <div class="scoop--highlight"></div>
+    <section class="hero-section" id="beranda">
+
+        <div class="hero-bg">
+
+            <img src="https://raw.githubusercontent.com/delilaqnshrh-creator/toko-rotiku/main/1b4753a8-cf59-482a-8ce5-8113440c656e.jpeg" alt="Roti Fresh Tokorotiku">
+
         </div>
-        <div class="scoop scoop--mint">
-          <div class="scoop--highlight"></div>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-glow"></div>
+
+        <div class="hero-content">
+
+            <div class="hero-badge">🍞 ROTI BERKUALITAS</div>
+
+            <h1 class="hero-title">Roti Fresh Setiap Hari, <span>Lembut dan Lezat</span> di Setiap Gigitan</h1>
+
+            <p class="hero-subtitle">Nikmati berbagai pilihan roti dan kue berkualitas tinggi yang dibuat setiap hari dengan penuh cinta.</p>
+
+            <a href="#menu" class="hero-btn"><i class="fas fa-utensils"></i> Lihat Menu Kami</a>
+
         </div>
-        <div class="scoop scoop--vanilla">
-          <div class="scoop--highlight"></div>
-        </div>
-      </div>
+
+        <div class="hero-scroll"><i class="fas fa-chevron-down"></i></div>
+
     </section>
 
-    <!-- ======= FLAVOR WHEEL — Ticker Marquee ======= -->
-    <section class="section section--alt flavors-section" id="flavors">
-      <div class="section__header reveal">
-        <span class="section__label">Flavor Wheel</span>
-        <h2 class="section__title">Pick your perfect scoop</h2>
-        <p class="section__desc">From timeless classics to rotating experiments, every flavor starts with a small-batch recipe and whole, real ingredients.</p>
-      </div>
 
-      <!-- Row 1: scrolls left -->
-      <div class="marquee">
-        <div class="marquee__track">
-          <!-- Original set -->
-          <div class="flavor-card">
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, #fce4b8, #e6c68a);"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Gelato</span>
-              <h3 class="flavor-card__name">Tahitian Vanilla Bean</h3>
-              <p class="flavor-card__desc">Single-origin vanilla pods steeped into a custard base with organic cream. Rich, floral, and never artificial.</p>
-            </div>
-          </div>
 
-          <div class="flavor-card">
-            <div class="flavor-card__tag">Popular</div>
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, #6b3a2a, #3e2118);"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Ice Cream</span>
-              <h3 class="flavor-card__name">Dark Chocolate Truffle</h3>
-              <p class="flavor-card__desc">70% cacao Belgian chocolate folded into a dense, fudgy base with hand-shaved truffle ribbons throughout.</p>
-            </div>
-          </div>
+    <!-- ======== MENU PRODUK ======== -->
 
-          <div class="flavor-card">
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, var(--sage-light), var(--sage-dark));"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Gelato</span>
-              <h3 class="flavor-card__name">Fresh Mint Chip</h3>
-              <p class="flavor-card__desc">Real peppermint leaves — no extract — blended with organic milk and dark chocolate shards from a local chocolatier.</p>
-            </div>
-          </div>
+    <section class="menu-section section-padding" id="menu">
 
-          <div class="flavor-card">
-            <div class="flavor-card__tag">Seasonal</div>
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, #c9b3d6, #9b7eb8);"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Gelato</span>
-              <h3 class="flavor-card__name">Lavender Honey</h3>
-              <p class="flavor-card__desc">Dried French lavender infused into wildflower honey and slow-churned to a silky, floral finish.</p>
-            </div>
-          </div>
+        <div class="container">
 
-          <div class="flavor-card">
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, #a8d8ea, #6bb7d4);"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Sorbet</span>
-              <h3 class="flavor-card__name">Blue Spirulina Coconut</h3>
-              <p class="flavor-card__desc">A vibrant, dairy-free blend of spirulina and creamy coconut milk. Tropical, refreshing, and naturally blue.</p>
-            </div>
-          </div>
+            <div class="section-header fade-up">
 
-          <div class="flavor-card">
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, #d4a76a, #b8863e);"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Ice Cream</span>
-              <h3 class="flavor-card__name">Salted Caramel Pecan</h3>
-              <p class="flavor-card__desc">House-made caramel swirled with Maldon sea salt and candied Georgia pecans. The sweet-salty classic.</p>
-            </div>
-          </div>
+                <div class="section-label">Menu Kami</div>
 
-          <!-- Duplicate set for seamless loop -->
-          <div class="flavor-card">
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, #fce4b8, #e6c68a);"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Gelato</span>
-              <h3 class="flavor-card__name">Tahitian Vanilla Bean</h3>
-              <p class="flavor-card__desc">Single-origin vanilla pods steeped into a custard base with organic cream. Rich, floral, and never artificial.</p>
-            </div>
-          </div>
+                <h2 class="section-title">Roti & Kue Pilihan</h2>
 
-          <div class="flavor-card">
-            <div class="flavor-card__tag">Popular</div>
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, #6b3a2a, #3e2118);"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Ice Cream</span>
-              <h3 class="flavor-card__name">Dark Chocolate Truffle</h3>
-              <p class="flavor-card__desc">70% cacao Belgian chocolate folded into a dense, fudgy base with hand-shaved truffle ribbons throughout.</p>
-            </div>
-          </div>
+                <div class="section-divider"></div>
 
-          <div class="flavor-card">
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, var(--sage-light), var(--sage-dark));"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Gelato</span>
-              <h3 class="flavor-card__name">Fresh Mint Chip</h3>
-              <p class="flavor-card__desc">Real peppermint leaves — no extract — blended with organic milk and dark chocolate shards from a local chocolatier.</p>
-            </div>
-          </div>
+                <p class="section-desc">Semua produk dibuat segar setiap hari dengan bahan berkualitas tinggi dan resep terbaik kami.</p>
 
-          <div class="flavor-card">
-            <div class="flavor-card__tag">Seasonal</div>
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, #c9b3d6, #9b7eb8);"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Gelato</span>
-              <h3 class="flavor-card__name">Lavender Honey</h3>
-              <p class="flavor-card__desc">Dried French lavender infused into wildflower honey and slow-churned to a silky, floral finish.</p>
             </div>
-          </div>
 
-          <div class="flavor-card">
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, #a8d8ea, #6bb7d4);"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Sorbet</span>
-              <h3 class="flavor-card__name">Blue Spirulina Coconut</h3>
-              <p class="flavor-card__desc">A vibrant, dairy-free blend of spirulina and creamy coconut milk. Tropical, refreshing, and naturally blue.</p>
-            </div>
-          </div>
 
-          <div class="flavor-card">
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, #d4a76a, #b8863e);"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Ice Cream</span>
-              <h3 class="flavor-card__name">Salted Caramel Pecan</h3>
-              <p class="flavor-card__desc">House-made caramel swirled with Maldon sea salt and candied Georgia pecans. The sweet-salty classic.</p>
+
+            <div class="row g-4">
+
+                <!-- Produk 1 -->
+
+                <div class="col-lg-4 col-md-6 fade-up">
+
+                    <div class="menu-card" data-name="Croissant Butter" data-price="15000">
+
+                        <div class="menu-card-img">
+
+                            <span class="menu-card-badge">⭐ BEST SELLER</span>
+
+                            <img src="https://raw.githubusercontent.com/delilaqnshrh-creator/toko-rotiku/main/Bekery%20Art%20By%20AI.jpeg" alt="Croissant Butter">
+
+                        </div>
+
+                        <div class="menu-card-body">
+
+                            <h4 class="menu-card-title">Croissant Butter</h4>
+
+                            <div class="menu-card-price">Rp15.000</div>
+
+                            <p class="menu-card-desc">Croissant renyah dengan lapisan lembut dan aroma butter khas</p>
+
+                            <div class="product-actions">
+
+                                <div class="qty-control">
+
+                                    <button class="qty-btn qty-minus">-</button>
+
+                                    <span class="qty-val">1</span>
+
+                                    <button class="qty-btn qty-plus">+</button>
+
+                                </div>
+
+                                <button class="add-to-cart-btn"><i class="fas fa-cart-plus me-2"></i>Tambah ke Keranjang</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Produk 2 -->
+
+                <div class="col-lg-4 col-md-6 fade-up">
+
+                    <div class="menu-card" data-name="Donat Gula" data-price="5000">
+
+                        <div class="menu-card-img">
+
+                            <img src="https://raw.githubusercontent.com/delilaqnshrh-creator/toko-rotiku/main/a3b195a8-be88-4139-8674-f63888e016b1.jpeg" alt="Donat Gula">
+
+                        </div>
+
+                        <div class="menu-card-body">
+
+                            <h4 class="menu-card-title">Donat Gula</h4>
+
+                            <div class="menu-card-price">Rp5.000</div>
+
+                            <p class="menu-card-desc">Donat empuk dengan taburan gula manis klasik</p>
+
+                            <div class="product-actions">
+
+                                <div class="qty-control">
+
+                                    <button class="qty-btn qty-minus">-</button>
+
+                                    <span class="qty-val">1</span>
+
+                                    <button class="qty-btn qty-plus">+</button>
+
+                                </div>
+
+                                <button class="add-to-cart-btn"><i class="fas fa-cart-plus me-2"></i>Tambah ke Keranjang</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Produk 3 -->
+
+                <div class="col-lg-4 col-md-6 fade-up">
+
+                    <div class="menu-card" data-name="Roti Keju" data-price="20000">
+
+                        <div class="menu-card-img">
+
+                            <img src="https://raw.githubusercontent.com/delilaqnshrh-creator/toko-rotiku/main/Hellobrown%20Roti%20Sobek%20Keju%20Susu%20_%20Roti.jpeg" alt="Roti Keju">
+
+                        </div>
+
+                        <div class="menu-card-body">
+
+                            <h4 class="menu-card-title">Roti Keju</h4>
+
+                            <div class="menu-card-price">Rp20.000</div>
+
+                            <p class="menu-card-desc">Roti lembut dengan isian keju gurih yang lumer</p>
+
+                            <div class="product-actions">
+
+                                <div class="qty-control">
+
+                                    <button class="qty-btn qty-minus">-</button>
+
+                                    <span class="qty-val">1</span>
+
+                                    <button class="qty-btn qty-plus">+</button>
+
+                                </div>
+
+                                <button class="add-to-cart-btn"><i class="fas fa-cart-plus me-2"></i>Tambah ke Keranjang</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Produk 4 -->
+
+                <div class="col-lg-4 col-md-6 fade-up">
+
+                    <div class="menu-card" data-name="Roti Coklat" data-price="20000">
+
+                        <div class="menu-card-img">
+
+                            <img src="https://raw.githubusercontent.com/delilaqnshrh-creator/toko-rotiku/main/Hellobrown%20Roti%20Sobek%20Coklat%20_%20Roti.jpeg" alt="Roti Coklat">
+
+                        </div>
+
+                        <div class="menu-card-body">
+
+                            <h4 class="menu-card-title">Roti Coklat</h4>
+
+                            <div class="menu-card-price">Rp20.000</div>
+
+                            <p class="menu-card-desc">Roti isi coklat manis favorit semua orang</p>
+
+                            <div class="product-actions">
+
+                                <div class="qty-control">
+
+                                    <button class="qty-btn qty-minus">-</button>
+
+                                    <span class="qty-val">1</span>
+
+                                    <button class="qty-btn qty-plus">+</button>
+
+                                </div>
+
+                                <button class="add-to-cart-btn"><i class="fas fa-cart-plus me-2"></i>Tambah ke Keranjang</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Produk 5 -->
+
+                <div class="col-lg-4 col-md-6 fade-up">
+
+                    <div class="menu-card" data-name="Cinnamon Roll" data-price="12000">
+
+                        <div class="menu-card-img">
+
+                            <img src="https://raw.githubusercontent.com/delilaqnshrh-creator/toko-rotiku/main/Homemade%20Cinnamon%20Roll%20Recipe%20_%20Deliciously%20Easy%20Morning%20Treat.jpeg" alt="Cinnamon Roll">
+
+                        </div>
+
+                        <div class="menu-card-body">
+
+                            <h4 class="menu-card-title">Cinnamon Roll</h4>
+
+                            <div class="menu-card-price">Rp12.000</div>
+
+                            <p class="menu-card-desc">Roti gulung kayu manis dengan aroma harum</p>
+
+                            <div class="product-actions">
+
+                                <div class="qty-control">
+
+                                    <button class="qty-btn qty-minus">-</button>
+
+                                    <span class="qty-val">1</span>
+
+                                    <button class="qty-btn qty-plus">+</button>
+
+                                </div>
+
+                                <button class="add-to-cart-btn"><i class="fas fa-cart-plus me-2"></i>Tambah ke Keranjang</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Produk 6 -->
+
+                <div class="col-lg-4 col-md-6 fade-up">
+
+                    <div class="menu-card" data-name="Bomboloni Vanila" data-price="8000">
+
+                        <div class="menu-card-img">
+
+                            <img src="https://raw.githubusercontent.com/delilaqnshrh-creator/toko-rotiku/main/Bomboloni%20-%20Paola%20Sersante.jpeg" alt="Bomboloni Vanila">
+
+                        </div>
+
+                        <div class="menu-card-body">
+
+                            <h4 class="menu-card-title">Bomboloni Vanila</h4>
+
+                            <div class="menu-card-price">Rp8.000</div>
+
+                            <p class="menu-card-desc">Donat isi krim vanila lembut</p>
+
+                            <div class="product-actions">
+
+                                <div class="qty-control">
+
+                                    <button class="qty-btn qty-minus">-</button>
+
+                                    <span class="qty-val">1</span>
+
+                                    <button class="qty-btn qty-plus">+</button>
+
+                                </div>
+
+                                <button class="add-to-cart-btn"><i class="fas fa-cart-plus me-2"></i>Tambah ke Keranjang</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
-          </div>
+
         </div>
 
-        <!-- Row 2: scrolls right (reverse) -->
-        <div class="marquee__track marquee__track--reverse">
-          <!-- Original set -->
-          <div class="flavor-card">
-            <div class="flavor-card__tag">New</div>
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, #f4a4b8, #e07a8a);"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Sorbet</span>
-              <h3 class="flavor-card__name">Strawberry Basil</h3>
-              <p class="flavor-card__desc">Ripe summer strawberries meet fresh garden basil in a dairy-free, vegan-friendly sorbet that's light and aromatic.</p>
-            </div>
-          </div>
-
-          <div class="flavor-card">
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, #8b6f4e, #5c4632);"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Ice Cream</span>
-              <h3 class="flavor-card__name">Espresso Cookie Crumble</h3>
-              <p class="flavor-card__desc">Double-shot espresso ice cream layered with crushed chocolate cookies and a caramel ribbon swirl.</p>
-            </div>
-          </div>
-
-          <div class="flavor-card">
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, #e8d5a3, #c4a96a);"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Gelato</span>
-              <h3 class="flavor-card__name">Pistachio Crema</h3>
-              <p class="flavor-card__desc">Roasted Sicilian pistachios blended into a silky-smooth gelato. Nutty, buttery, and unmistakably authentic.</p>
-            </div>
-          </div>
-
-          <div class="flavor-card">
-            <div class="flavor-card__tag">Vegan</div>
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, #f7c59f, #ef8e38);"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Sorbet</span>
-              <h3 class="flavor-card__name">Mango Passionfruit</h3>
-              <p class="flavor-card__desc">Ripe Alphonso mango and tangy passionfruit churned into a bright, tropical dairy-free sorbet.</p>
-            </div>
-          </div>
-
-          <div class="flavor-card">
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, #f0c2c2, #d4868a);"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Ice Cream</span>
-              <h3 class="flavor-card__name">Raspberry White Choc</h3>
-              <p class="flavor-card__desc">Tart raspberry ripple folded through creamy white chocolate ice cream with freeze-dried berry crunch.</p>
-            </div>
-          </div>
-
-          <div class="flavor-card">
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, #b6d7a8, #7ab55c);"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Gelato</span>
-              <h3 class="flavor-card__name">Matcha Black Sesame</h3>
-              <p class="flavor-card__desc">Ceremonial-grade matcha swirled with toasted black sesame paste. Earthy, nutty, and deeply satisfying.</p>
-            </div>
-          </div>
-
-          <!-- Duplicate set for seamless loop -->
-          <div class="flavor-card">
-            <div class="flavor-card__tag">New</div>
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, #f4a4b8, #e07a8a);"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Sorbet</span>
-              <h3 class="flavor-card__name">Strawberry Basil</h3>
-              <p class="flavor-card__desc">Ripe summer strawberries meet fresh garden basil in a dairy-free, vegan-friendly sorbet that's light and aromatic.</p>
-            </div>
-          </div>
-
-          <div class="flavor-card">
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, #8b6f4e, #5c4632);"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Ice Cream</span>
-              <h3 class="flavor-card__name">Espresso Cookie Crumble</h3>
-              <p class="flavor-card__desc">Double-shot espresso ice cream layered with crushed chocolate cookies and a caramel ribbon swirl.</p>
-            </div>
-          </div>
-
-          <div class="flavor-card">
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, #e8d5a3, #c4a96a);"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Gelato</span>
-              <h3 class="flavor-card__name">Pistachio Crema</h3>
-              <p class="flavor-card__desc">Roasted Sicilian pistachios blended into a silky-smooth gelato. Nutty, buttery, and unmistakably authentic.</p>
-            </div>
-          </div>
-
-          <div class="flavor-card">
-            <div class="flavor-card__tag">Vegan</div>
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, #f7c59f, #ef8e38);"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Sorbet</span>
-              <h3 class="flavor-card__name">Mango Passionfruit</h3>
-              <p class="flavor-card__desc">Ripe Alphonso mango and tangy passionfruit churned into a bright, tropical dairy-free sorbet.</p>
-            </div>
-          </div>
-
-          <div class="flavor-card">
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, #f0c2c2, #d4868a);"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Ice Cream</span>
-              <h3 class="flavor-card__name">Raspberry White Choc</h3>
-              <p class="flavor-card__desc">Tart raspberry ripple folded through creamy white chocolate ice cream with freeze-dried berry crunch.</p>
-            </div>
-          </div>
-
-          <div class="flavor-card">
-            <div class="flavor-card__swatch" style="background: radial-gradient(circle at 35% 35%, #b6d7a8, #7ab55c);"></div>
-            <div class="flavor-card__info">
-              <span class="flavor-card__type">Gelato</span>
-              <h3 class="flavor-card__name">Matcha Black Sesame</h3>
-              <p class="flavor-card__desc">Ceremonial-grade matcha swirled with toasted black sesame paste. Earthy, nutty, and deeply satisfying.</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- ======= TOPPING BUILDER ======= -->
-    <section class="section builder" id="builder">
-      <div class="section__header reveal">
-        <span class="section__label">Build Your Own</span>
-        <h2 class="section__title">Your sundae, your rules</h2>
-        <p class="section__desc">Walk through our four-step sundae builder at the counter or order ahead for pickup. Over 2,000 combinations to try.</p>
-      </div>
 
-      <div class="builder__layout">
-        <div class="builder__steps">
-          <!-- Step 1 -->
-          <div class="builder-step reveal">
-            <div class="builder-step__num">1</div>
-            <div>
-              <h3 class="builder-step__title">Choose Your Base</h3>
-              <p class="builder-step__text">Ice cream, gelato, frozen yogurt, or dairy-free sorbet. Pick one, two, or go all three for the ultimate bowl.</p>
-            </div>
-          </div>
 
-          <!-- Step 2 -->
-          <div class="builder-step reveal reveal-delay-1">
-            <div class="builder-step__num">2</div>
-            <div>
-              <h3 class="builder-step__title">Pick Your Vessel</h3>
-              <p class="builder-step__text">Classic waffle cone, handmade sugar bowl, glass cup, or our signature chocolate-dipped mega cone.</p>
-            </div>
-          </div>
+    <!-- ======== PROMO ======== -->
 
-          <!-- Step 3 -->
-          <div class="builder-step reveal reveal-delay-2">
-            <div class="builder-step__num">3</div>
-            <div>
-              <h3 class="builder-step__title">Load the Toppings</h3>
-              <p class="builder-step__text">Crushed Oreos, toasted coconut, candied pecans, fresh berries, brownie bites, mochi chunks, and 20 more.</p>
-            </div>
-          </div>
+    <section class="promo-section section-padding" id="promo">
 
-          <!-- Step 4 -->
-          <div class="builder-step reveal reveal-delay-3">
-            <div class="builder-step__num">4</div>
-            <div>
-              <h3 class="builder-step__title">Drizzle &amp; Finish</h3>
-              <p class="builder-step__text">Hot fudge, caramel sauce, matcha drizzle, raspberry coulis, or honey — plus a sprinkle of sea salt or edible glitter.</p>
+        <div class="container">
+
+            <div class="section-header fade-up">
+
+                <div class="section-label">Promo Spesial</div>
+
+                <h2 class="section-title">Penawaran Menarik untuk Kamu</h2>
+
+                <div class="section-divider"></div>
+
+                <p class="section-desc">Jangan lewatkan promo terbatas dari Tokorotiku! Dapatkan harga terbaik setiap harinya.</p>
+
             </div>
-          </div>
+
+            <div class="row g-4 justify-content-center">
+
+                <div class="col-lg-5 col-md-6 fade-up">
+
+                    <div class="promo-card">
+
+                        <div class="promo-icon"><i class="fas fa-percent"></i></div>
+
+                        <div class="promo-tag">Khusus Hari Jumat</div>
+
+                        <h3 class="promo-title mt-3">Diskon 10%</h3>
+
+                        <p class="promo-desc">Dapatkan potongan harga <span class="promo-highlight">10%</span> untuk semua menu roti dan kue spesial kami setiap hari Jumat!</p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-5 col-md-6 fade-up">
+
+                    <div class="promo-card">
+
+                        <div class="promo-icon"><i class="fas fa-gift"></i></div>
+
+                        <div class="promo-tag">Promo Belanja</div>
+
+                        <h3 class="promo-title mt-3">Beli 1 Gratis 1</h3>
+
+                        <p class="promo-desc">Beli 1 gratis 1 untuk semua varian roti dengan <span class="promo-highlight">minimal pembelian Rp100.000</span>. Ajak keluarga dan teman!</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <!-- Visual Preview -->
-        <div class="builder__preview reveal">
-          <div class="builder__preview-bowl">
-            <div class="builder__preview-scoop1"></div>
-            <div class="builder__preview-scoop2"></div>
-            <div class="builder__preview-scoop3"></div>
-          </div>
-          <p class="builder__preview-text">Build-Your-Own Sundae</p>
-          <p class="builder__preview-price">From $7.50</p>
-          <p class="builder__preview-note">Base + 3 toppings included</p>
-        </div>
-      </div>
     </section>
 
-    <!-- ======= CATERING CART ======= -->
-    <section class="section section--alt" id="catering">
-      <div class="section__header reveal">
-        <span class="section__label">Catering Cart Rental</span>
-        <h2 class="section__title">Bring the sweetness to you</h2>
-        <p class="section__desc">Our vintage carts come fully stocked with your choice of flavors, a friendly scooper, and all the toppings your guests could dream of.</p>
-      </div>
 
-      <div class="catering__grid">
-        <!-- Cart 1: Mini -->
-        <div class="cart-card reveal">
-          <div class="cart-card__visual">
-            <img src="images/the-mini-scoop.avif" alt="Ice cream cart setup for a small party" loading="lazy">
-            <span class="cart-card__visual-label">Intimate</span>
-          </div>
-          <div class="cart-card__body">
-            <h3 class="cart-card__name">The Mini Scoop</h3>
-            <p class="cart-card__desc">Perfect for birthday parties, baby showers, and small office celebrations. Compact cart, big flavors.</p>
-            <div class="cart-card__details">
-              <span class="cart-card__detail">Up to 30 guests</span>
-              <span class="cart-card__detail">3 flavors</span>
-              <span class="cart-card__detail">2 hours</span>
+
+    <!-- ======== TENTANG KAMI ======== -->
+
+    <section class="about-section section-padding" id="tentang">
+
+        <div class="container">
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6 fade-left">
+
+                    <div class="about-img-wrapper">
+
+                        <img src="https://picsum.photos/seed/bakery-about/700/500.jpg" alt="Tentang Tokorotiku">
+
+                        <div class="about-img-overlay"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 fade-right">
+
+                    <div class="section-label">Tentang Kami</div>
+
+                    <h2 class="section-title" style="text-align:left;">Dibuat dengan Cinta & Bahan Terbaik</h2>
+
+                    <div class="section-divider" style="margin:0 0 24px 0;"></div>
+
+                    <p style="color: var(--text-medium); line-height: 1.8; margin-bottom: 32px;">
+
+                        Tokorotiku adalah toko roti dan kue yang dibuat fresh setiap hari menggunakan bahan berkualitas tinggi dan penuh cinta untuk pelanggan.
+
+                    </p>
+
+                    <div class="about-feature">
+
+                        <div class="about-feature-icon"><i class="fas fa-seedling"></i></div>
+
+                        <div><h5>Bahan Alami</h5><p>Menggunakan bahan-bahan segar dan alami tanpa pengawet berbahaya</p></div>
+
+                    </div>
+
+                    <div class="about-feature">
+
+                        <div class="about-feature-icon"><i class="fas fa-heart"></i></div>
+
+                        <div><h5>Dibuat dengan Cinta</h5><p>Setiap roti dibuat dengan ketulusan dan dedikasi penuh</p></div>
+
+                    </div>
+
+                    <div class="about-feature">
+
+                        <div class="about-feature-icon"><i class="fas fa-clock"></i></div>
+
+                        <div><h5>Fresh Setiap Hari</h5><p>Roti baru dipanggang setiap pagi untuk menjamin kesegaran</p></div>
+
+                    </div>
+
+                </div>
+
             </div>
-            <div class="cart-card__price">$350 <small>/ event</small></div>
-          </div>
+
         </div>
 
-        <!-- Cart 2: Classic -->
-        <div class="cart-card reveal reveal-delay-1">
-          <div class="cart-card__visual">
-            <img src="images/the-classic-cart.avif" alt="Vintage ice cream cart at an outdoor event" loading="lazy">
-            <span class="cart-card__visual-label">Most Popular</span>
-          </div>
-          <div class="cart-card__body">
-            <h3 class="cart-card__name">The Classic Cart</h3>
-            <p class="cart-card__desc">Our signature vintage cart experience. Ideal for weddings, corporate events, and weekend festivals.</p>
-            <div class="cart-card__details">
-              <span class="cart-card__detail">Up to 100 guests</span>
-              <span class="cart-card__detail">6 flavors</span>
-              <span class="cart-card__detail">3 hours</span>
-              <span class="cart-card__detail">Toppings bar</span>
-            </div>
-            <div class="cart-card__price">$750 <small>/ event</small></div>
-          </div>
-        </div>
-
-        <!-- Cart 3: Deluxe -->
-        <div class="cart-card reveal reveal-delay-2">
-          <div class="cart-card__visual">
-            <img src="images/the-grand-parlor.avif" alt="Elegant dessert spread at a premium catered event" loading="lazy">
-            <span class="cart-card__visual-label">Premium</span>
-          </div>
-          <div class="cart-card__body">
-            <h3 class="cart-card__name">The Grand Parlor</h3>
-            <p class="cart-card__desc">The full experience — double cart setup with a gelato station, waffle bar, and dedicated event coordinator.</p>
-            <div class="cart-card__details">
-              <span class="cart-card__detail">Up to 250 guests</span>
-              <span class="cart-card__detail">10 flavors</span>
-              <span class="cart-card__detail">4 hours</span>
-              <span class="cart-card__detail">Waffle bar</span>
-              <span class="cart-card__detail">Coordinator</span>
-            </div>
-            <div class="cart-card__price">$1,400 <small>/ event</small></div>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- ======= SEASONAL LIMITED EDITIONS ======= -->
-    <!-- ======= SEASONAL LIMITED EDITIONS — Tabs ======= -->
-    <section class="section" id="seasonal">
-      <div class="section__header reveal">
-        <span class="section__label">Limited Editions</span>
-        <h2 class="section__title">Seasonal scoops, fleeting &amp; fresh</h2>
-        <p class="section__desc">Each season brings a small-batch lineup inspired by what's ripe, what's in the air, and a little bit of nostalgia.</p>
-      </div>
 
-      <!-- Season Tabs -->
-      <div class="seasonal-tabs reveal" role="tablist">
-        <button class="seasonal-tab is-active" data-season="spring" role="tab" aria-selected="true" aria-controls="panel-spring">
-          <span class="seasonal-tab__icon" aria-hidden="true">&#127800;</span> Spring
-        </button>
-        <button class="seasonal-tab" data-season="summer" role="tab" aria-selected="false" aria-controls="panel-summer">
-          <span class="seasonal-tab__icon" aria-hidden="true">&#9728;</span> Summer
-        </button>
-        <button class="seasonal-tab" data-season="autumn" role="tab" aria-selected="false" aria-controls="panel-autumn">
-          <span class="seasonal-tab__icon" aria-hidden="true">&#127810;</span> Autumn
-        </button>
-        <button class="seasonal-tab" data-season="winter" role="tab" aria-selected="false" aria-controls="panel-winter">
-          <span class="seasonal-tab__icon" aria-hidden="true">&#10052;</span> Winter
-        </button>
-      </div>
 
-      <!-- Tab Panels -->
-      <div class="seasonal-panels reveal">
+    <!-- ======== VIDEO ======== -->
 
-        <!-- Spring Panel -->
-        <div class="seasonal-panel is-active" id="panel-spring" role="tabpanel">
-          <div class="seasonal-panel__visual">
-            <img src="images/spring-collection.avif" alt="Cherry blossom almond gelato with petals" loading="lazy">
-            <span class="seasonal-panel__badge">Available Mar – May</span>
-          </div>
-          <div class="seasonal-panel__details">
-            <span class="seasonal-panel__season-label">Spring Collection</span>
-            <h3 class="seasonal-panel__name">Cherry Blossom Almond</h3>
-            <p class="seasonal-panel__desc">A floral almond gelato topped with candied cherry blossom petals and a hint of rosewater. Light, fragrant, and utterly dreamy — like a stroll through a blooming orchard.</p>
-            <div class="seasonal-panel__meta">
-              <span class="seasonal-panel__meta-tag"><span>&#127846;</span> Gelato</span>
-              <span class="seasonal-panel__meta-tag"><span>&#10024;</span> Limited Batch</span>
-              <span class="seasonal-panel__meta-tag"><span>&#127793;</span> Nut Allergy Info</span>
+    <section class="video-section section-padding" id="video">
+
+        <div class="container">
+
+            <div class="section-header fade-up">
+
+                <div class="section-label">Video</div>
+
+                <h2 class="section-title">Lihat Proses Kami</h2>
+
+                <div class="section-divider"></div>
+
+                <p class="section-desc">Saksikan bagaimana kami membuat roti segar setiap hari dengan penuh cinta dan ketelitian.</p>
+
             </div>
-            <a href="#hero" class="btn btn--primary seasonal-panel__cta">Try It Now</a>
-          </div>
+
+            <div class="row justify-content-center fade-up">
+
+                <div class="col-lg-10">
+
+                    <div class="video-wrapper">
+
+                        <iframe src="https://www.youtube.com/embed/wM3tBsYJGlo" title="Video Tokorotiku" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <!-- Summer Panel -->
-        <div class="seasonal-panel" id="panel-summer" role="tabpanel">
-          <div class="seasonal-panel__visual">
-            <img src="images/summer-collection.avif" alt="Mango chili lime sorbet with tropical fruits" loading="lazy">
-            <span class="seasonal-panel__badge">Available Jun – Aug</span>
-          </div>
-          <div class="seasonal-panel__details">
-            <span class="seasonal-panel__season-label">Summer Collection</span>
-            <h3 class="seasonal-panel__name">Mango Chili Lime</h3>
-            <p class="seasonal-panel__desc">Sweet Alphonso mango sorbet dusted with Tajín chili-lime seasoning and a lime zest crumble. Where tropical heat meets frozen sweet — our most requested comeback flavor.</p>
-            <div class="seasonal-panel__meta">
-              <span class="seasonal-panel__meta-tag"><span>&#127847;</span> Sorbet</span>
-              <span class="seasonal-panel__meta-tag"><span>&#127793;</span> Dairy-Free</span>
-              <span class="seasonal-panel__meta-tag"><span>&#127798;</span> Mild Spice</span>
-            </div>
-            <a href="#hero" class="btn btn--primary seasonal-panel__cta">Try It Now</a>
-          </div>
-        </div>
-
-        <!-- Autumn Panel -->
-        <div class="seasonal-panel" id="panel-autumn" role="tabpanel">
-          <div class="seasonal-panel__visual">
-            <img src="images/autumn-collection.avif" alt="Pumpkin chai swirl ice cream with autumn spices" loading="lazy">
-            <span class="seasonal-panel__badge">Available Sep – Nov</span>
-          </div>
-          <div class="seasonal-panel__details">
-            <span class="seasonal-panel__season-label">Autumn Collection</span>
-            <h3 class="seasonal-panel__name">Pumpkin Chai Swirl</h3>
-            <p class="seasonal-panel__desc">Spiced pumpkin ice cream swirled with masala chai caramel and topped with toasted pumpkin seeds. Cozy, warming, and the perfect excuse to add an extra scoop.</p>
-            <div class="seasonal-panel__meta">
-              <span class="seasonal-panel__meta-tag"><span>&#127846;</span> Ice Cream</span>
-              <span class="seasonal-panel__meta-tag"><span>&#10024;</span> Fan Favorite</span>
-              <span class="seasonal-panel__meta-tag"><span>&#127869;</span> Contains Dairy</span>
-            </div>
-            <a href="#hero" class="btn btn--primary seasonal-panel__cta">Try It Now</a>
-          </div>
-        </div>
-
-        <!-- Winter Panel -->
-        <div class="seasonal-panel" id="panel-winter" role="tabpanel">
-          <div class="seasonal-panel__visual">
-            <img src="images/winter-collection.avif" alt="Peppermint bark brownie ice cream with chocolate pieces" loading="lazy">
-            <span class="seasonal-panel__badge">Available Dec – Feb</span>
-          </div>
-          <div class="seasonal-panel__details">
-            <span class="seasonal-panel__season-label">Winter Collection</span>
-            <h3 class="seasonal-panel__name">Peppermint Bark Brownie</h3>
-            <p class="seasonal-panel__desc">Dark chocolate peppermint ice cream loaded with fudgy brownie chunks and shattered white chocolate peppermint bark. Holiday indulgence in every bite.</p>
-            <div class="seasonal-panel__meta">
-              <span class="seasonal-panel__meta-tag"><span>&#127846;</span> Ice Cream</span>
-              <span class="seasonal-panel__meta-tag"><span>&#127876;</span> Holiday Special</span>
-              <span class="seasonal-panel__meta-tag"><span>&#10024;</span> Limited Batch</span>
-            </div>
-            <a href="#hero" class="btn btn--primary seasonal-panel__cta">Try It Now</a>
-          </div>
-        </div>
-
-      </div>
     </section>
 
-    <!-- ======= LOYALTY STAMP CARD ======= -->
-    <section class="section section--alt loyalty" id="loyalty">
-      <div class="section__header reveal">
-        <span class="section__label">Frost Rewards</span>
-        <h2 class="section__title">Every scoop gets you closer</h2>
-        <p class="section__desc">Grab a stamp card on your next visit. Ten stamps earns a free scoop — plus bonus perks along the way.</p>
-      </div>
 
-      <div class="loyalty__layout">
-        <div class="loyalty__info reveal">
-          <div class="loyalty__perks">
-            <div class="perk">
-              <div class="perk__icon">&#10003;</div>
-              <p class="perk__text"><strong>5th stamp:</strong> Free topping upgrade on any sundae or cone — go ahead, add the brownie bites.</p>
-            </div>
-            <div class="perk">
-              <div class="perk__icon">&#10003;</div>
-              <p class="perk__text"><strong>10th stamp:</strong> One free single scoop in any flavor, including seasonal and limited editions.</p>
-            </div>
-            <div class="perk">
-              <div class="perk__icon">&#10003;</div>
-              <p class="perk__text"><strong>Birthday bonus:</strong> Show your ID on your birthday month and get a free waffle cone upgrade all week.</p>
-            </div>
-            <div class="perk">
-              <div class="perk__icon">&#10003;</div>
-              <p class="perk__text"><strong>Referral reward:</strong> Bring a friend who starts a card, and you both get a bonus stamp.</p>
-            </div>
-          </div>
 
-          <a href="#hero" class="btn btn--sage" style="margin-top: 2rem;">Start Collecting</a>
+    <!-- ======== TESTIMONI ======== -->
+
+    <section class="testi-section section-padding" id="testimoni">
+
+        <div class="container">
+
+            <div class="section-header fade-up">
+
+                <div class="section-label">Testimoni</div>
+
+                <h2 class="section-title">Kata Mereka tentang Tokorotiku</h2>
+
+                <div class="section-divider"></div>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-lg-4 col-md-6 fade-up">
+
+                    <div class="testi-card">
+
+                        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+
+                        <p class="testi-text">Rotinya enak banget dan selalu fresh!</p>
+
+                        <div class="testi-author"><div class="testi-avatar">NA</div><div class="testi-name">Nyoman Ayu Carmen</div></div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6 fade-up">
+
+                    <div class="testi-card">
+
+                        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+
+                        <p class="testi-text">Tempatnya estetik dan rotinya berkualitas!</p>
+
+                        <div class="testi-author"><div class="testi-avatar">MA</div><div class="testi-name">Michie Alexandra</div></div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6 fade-up">
+
+                    <div class="testi-card">
+
+                        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+
+                        <p class="testi-text">Cinnamon roll-nya favorit saya!</p>
+
+                        <div class="testi-author"><div class="testi-avatar">AK</div><div class="testi-name">Anh Keonho</div></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <!-- Stamp Card Visual -->
-        <div class="stamp-card reveal reveal-delay-1">
-          <div class="stamp-card__header">
-            <span class="stamp-card__title">Your Stamp Card</span>
-            <span class="stamp-card__count">7 / 10</span>
-          </div>
-          <div class="stamp-card__grid">
-            <div class="stamp stamp--filled">&#127846;</div>
-            <div class="stamp stamp--filled">&#127846;</div>
-            <div class="stamp stamp--filled">&#127846;</div>
-            <div class="stamp stamp--filled">&#127846;</div>
-            <div class="stamp stamp--reward stamp--filled">&#9733;</div>
-            <div class="stamp stamp--filled">&#127846;</div>
-            <div class="stamp stamp--filled">&#127846;</div>
-            <div class="stamp">&#127846;</div>
-            <div class="stamp">&#127846;</div>
-            <div class="stamp stamp--reward">FREE</div>
-          </div>
-          <p class="stamp-card__footer">3 more scoops until your free treat!</p>
-        </div>
-      </div>
     </section>
 
-    <!-- ======= FOOTER ======= -->
-    <footer class="footer">
-      <div class="footer__top">
-        <div>
-          <div class="footer__brand">Fr<span>o</span>st</div>
-          <p class="footer__copy">Small-batch ice cream and gelato, handcrafted daily in our kitchen on Oak Street. Made with love, served with a smile.</p>
+
+
+    <!-- ======== LOKASI ======== -->
+
+    <section class="location-section section-padding" id="lokasi">
+
+        <div class="container">
+
+            <div class="section-header fade-up">
+
+                <div class="section-label">Lokasi</div>
+
+                <h2 class="section-title">Temukan Kami</h2>
+
+                <div class="section-divider"></div>
+
+                <p class="section-desc">Kunjungi toko kami dan nikmati roti langsung dari oven!</p>
+
+            </div>
+
+            <div class="row g-5 align-items-center">
+
+                <div class="col-lg-7 fade-left">
+
+                    <div class="map-wrapper">
+
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.9!2d110.39!3d-7.83!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5787bd5b5fc3%3A0x21723d8eb5dd268!2sPasar%20Kota%20Gede!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-5 fade-right">
+
+                    <div class="location-info">
+
+                        <div class="location-item"><div class="location-item-icon"><i class="fas fa-map-marker-alt"></i></div><div><h5>Alamat</h5><p>Pasar Kota Gede, Yogyakarta</p></div></div>
+
+                        <div class="location-item"><div class="location-item-icon"><i class="fas fa-phone-alt"></i></div><div><h5>Telepon</h5><p>085136488738</p></div></div>
+
+                        <div class="location-item"><div class="location-item-icon"><i class="fab fa-whatsapp"></i></div><div><h5>WhatsApp</h5><p>085136488738</p></div></div>
+
+                        <div class="location-item"><div class="location-item-icon"><i class="fas fa-clock"></i></div><div><h5>Jam Operasional</h5><p>Senin - Sabtu: 06.00 - 20.00 WIB<br>Minggu: 06.00 - 16.00 WIB</p></div></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="footer__links">
-          <div class="footer__col">
-            <h4>Menu</h4>
-            <ul>
-              <li><a href="#flavors">Flavors</a></li>
-              <li><a href="#builder">Build Your Own</a></li>
-              <li><a href="#seasonal">Seasonal Scoops</a></li>
-              <li><a href="#catering">Catering</a></li>
-            </ul>
-          </div>
-          <div class="footer__col">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="#">Our Story</a></li>
-              <li><a href="#">Sourcing</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Press</a></li>
-            </ul>
-          </div>
-          <div class="footer__col">
-            <h4>Connect</h4>
-            <ul>
-              <li><a href="https://x.com/minthu" target="_blank">X Handle</a></li>
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Instagram</a></li>
-              <li><a href="#"><span class="__cf_email__" data-cfemail="8fe7eae3e3e0cfe9fde0fcfba1ece0">[email&#160;protected]</span></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    </section>
 
-      <div class="footer__bottom">
-        <p>&copy; 2026 Frost Desserts. All rights reserved. Designed by <a href="https://templatemo.com" target="_blank" rel="noopener noreferrer">TemplateMo</a></p>
-      </div>
+
+
+    <!-- ======== KONTAK / CTA ======== -->
+
+    <section class="cta-section section-padding" id="kontak">
+
+        <div class="container">
+
+            <div class="cta-content fade-up">
+
+                <h2 class="cta-title">Pesan Roti Sekarang! 🍞</h2>
+
+                <p class="cta-desc">Hubungi kami via WhatsApp untuk pemesanan roti dan kue favorit Anda. Kami siap melayani!</p>
+
+                <a href="https://wa.me/6285136488738?text=Halo%20Tokorotiku%2C%20saya%20ingin%20memesan%20roti" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Pesan via WhatsApp</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======== FOOTER ======== -->
+
+    <footer class="footer-section">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+                <div class="col-lg-4">
+
+                    <div class="footer-brand"><i class="fas fa-bread-slice"></i> Tokorotiku</div>
+
+                    <p class="footer-desc">Toko roti dan kue yang dibuat fresh setiap hari dengan bahan berkualitas tinggi dan penuh cinta untuk pelanggan.</p>
+
+                    <div class="footer-social">
+
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+
+                        <a href="https://wa.me/6285136488738" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-2 col-md-4">
+
+                    <h5 class="footer-title">Menu</h5>
+
+                    <a href="#beranda" class="footer-link">Beranda</a>
+
+                    <a href="#menu" class="footer-link">Menu</a>
+
+                    <a href="#promo" class="footer-link">Promo</a>
+
+                    <a href="#tentang" class="footer-link">Tentang Kami</a>
+
+                </div>
+
+                <div class="col-lg-2 col-md-4">
+
+                    <h5 class="footer-title">Lainnya</h5>
+
+                    <a href="#video" class="footer-link">Video</a>
+
+                    <a href="#lokasi" class="footer-link">Lokasi</a>
+
+                    <a href="#kontak" class="footer-link">Kontak</a>
+
+                    <a href="https://wa.me/6285136488738" class="footer-link" target="_blank">WhatsApp</a>
+
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+
+                    <h5 class="footer-title">Kontak</h5>
+
+                    <p style="font-size: 0.9rem; margin-bottom: 8px;"><i class="fas fa-map-marker-alt me-2" style="color: var(--gold);"></i> Pasar Kota Gede, Yogyakarta</p>
+
+                    <p style="font-size: 0.9rem; margin-bottom: 8px;"><i class="fas fa-phone-alt me-2" style="color: var(--gold);"></i> 085136488738</p>
+
+                    <p style="font-size: 0.9rem; margin-bottom: 0;"><i class="fab fa-whatsapp me-2" style="color: var(--gold);"></i> 085136488738</p>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">&copy; 2026 Tokorotiku. Semua hak dilindungi. Dibuat dengan 🤎 di Yogyakarta.</div>
+
+        </div>
+
     </footer>
 
-  </main>
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-  <script src="templatemo-frost-script.js"></script>
+
+
+    <!-- ======== BACK TO TOP ======== -->
+
+    <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+
+
+
+    <!-- Scripts -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://raw.githubusercontent.com/delilaqnshrh-creator/toko-rotiku/main/templatemo-frost-script.js"></script>
+
+
+
+    <script>
+
+        // ======== TEMPLATE SCRIPTS (Preserved) ========
+
+        window.addEventListener('load', function () {
+
+            const preloader = document.getElementById('preloader');
+
+            if (preloader) setTimeout(() => preloader.classList.add('hide'), 600);
+
+        });
+
+
+
+        const mainNav = document.getElementById('mainNav');
+
+        window.addEventListener('scroll', function () {
+
+            if (window.scrollY > 60) mainNav.classList.add('scrolled');
+
+            else mainNav.classList.remove('scrolled');
+
+        });
+
+
+
+        const sections = document.querySelectorAll('section[id]');
+
+        const navLinks = document.querySelectorAll('.nav-link-custom');
+
+        function updateActiveNav() {
+
+            const scrollY = window.scrollY + 120;
+
+            sections.forEach(section => {
+
+                const sectionTop = section.offsetTop;
+
+                const sectionHeight = section.offsetHeight;
+
+                const sectionId = section.getAttribute('id');
+
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+
+                    navLinks.forEach(link => {
+
+                        link.classList.remove('active');
+
+                        if (link.getAttribute('href') === '#' + sectionId) link.classList.add('active');
+
+                    });
+
+                }
+
+            });
+
+        }
+
+        window.addEventListener('scroll', updateActiveNav);
+
+
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+            anchor.addEventListener('click', function (e) {
+
+                e.preventDefault();
+
+                const target = document.querySelector(this.getAttribute('href'));
+
+                if (target) {
+
+                    window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' });
+
+                }
+
+                const navCollapse = document.getElementById('navContent');
+
+                const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+
+                if (bsCollapse) bsCollapse.hide();
+
+            });
+
+        });
+
+
+
+        const animatedElements = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
+
+        function checkAnimations() {
+
+            const windowHeight = window.innerHeight;
+
+            animatedElements.forEach(el => { if (el.getBoundingClientRect().top < windowHeight - 80) el.classList.add('visible'); });
+
+        }
+
+        window.addEventListener('scroll', checkAnimations);
+
+        window.addEventListener('load', checkAnimations);
+
+
+
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => backToTop.classList.toggle('show', window.scrollY > 500));
+
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+
+
+
+
+        // ==============================================
+
+        // ======== SHOPPING CART LOGIC (NEW) =========
+
+        // ==============================================
+
+
+
+        const cart = [];
+
+        const cartToggle = document.getElementById('cartToggle');
+
+        const cartDropdown = document.getElementById('cartDropdown');
+
+        const cartClose = document.getElementById('cartClose');
+
+        const cartBody = document.getElementById('cartBody');
+
+        const cartBadge = document.getElementById('cartBadge');
+
+        const cartTotalEl = document.getElementById('cartTotal');
+
+        const btnCheckout = document.getElementById('btnCheckout');
+
+
+
+        // Format to Rupiah
+
+        const formatRupiah = (angka) => `Rp ${angka.toLocaleString('id-ID')}`;
+
+
+
+        // Toggle Cart Dropdown
+
+        cartToggle.addEventListener('click', (e) => {
+
+            e.stopPropagation();
+
+            cartDropdown.classList.toggle('show');
+
+        });
+
+        cartClose.addEventListener('click', () => cartDropdown.classList.remove('show'));
+
+        document.addEventListener('click', (e) => {
+
+            if (!cartDropdown.contains(e.target) && !cartToggle.contains(e.target)) {
+
+                cartDropdown.classList.remove('show');
+
+            }
+
+        });
+
+
+
+        // Card Quantity Controls
+
+        document.querySelectorAll('.menu-card').forEach(card => {
+
+            const minusBtn = card.querySelector('.qty-minus');
+
+            const plusBtn = card.querySelector('.qty-plus');
+
+            const qtyVal = card.querySelector('.qty-val');
+
+
+
+            minusBtn.addEventListener('click', () => {
+
+                let val = parseInt(qtyVal.textContent);
+
+                if (val > 1) qtyVal.textContent = val - 1;
+
+            });
+
+            plusBtn.addEventListener('click', () => {
+
+                let val = parseInt(qtyVal.textContent);
+
+                if (val < 99) qtyVal.textContent = val + 1;
+
+            });
+
+        });
+
+
+
+        // Add to Cart Logic
+
+        document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+
+            btn.addEventListener('click', () => {
+
+                const card = btn.closest('.menu-card');
+
+                const name = card.dataset.name;
+
+                const price = parseInt(card.dataset.price);
+
+                const qty = parseInt(card.querySelector('.qty-val').textContent);
+
+
+
+                const existingItem = cart.find(item => item.name === name);
+
+                if (existingItem) {
+
+                    existingItem.qty += qty;
+
+                } else {
+
+                    cart.push({ name, price, qty });
+
+                }
+
+
+
+                // Reset card qty to 1
+
+                card.querySelector('.qty-val').textContent = '1';
+
+
+
+                updateCartUI();
+
+                
+
+                // Bump animation on badge
+
+                cartBadge.classList.remove('bump');
+
+                void cartBadge.offsetWidth; // trigger reflow
+
+                cartBadge.classList.add('bump');
+
+
+
+                // Open cart automatically
+
+                cartDropdown.classList.add('show');
+
+            });
+
+        });
+
+
+
+        // Update Cart UI
+
+        function updateCartUI() {
+
+            let totalHarga = 0;
+
+            let totalQty = 0;
+
+
+
+            if (cart.length === 0) {
+
+                cartBody.innerHTML = '<div class="cart-empty"><i class="fas fa-bread-slice"></i>Keranjang masih kosong</div>';
+
+            } else {
+
+                cartBody.innerHTML = '';
+
+                cart.forEach((item, index) => {
+
+                    const itemTotal = item.price * item.qty;
+
+                    totalHarga += itemTotal;
+
+                    totalQty += item.qty;
+
+
+
+                    const div = document.createElement('div');
+
+                    div.className = 'cart-item';
+
+                    div.innerHTML = `
+
+                        <div class="cart-item-info">
+
+                            <div class="cart-item-name">${item.name}</div>
+
+                            <div class="cart-item-price">${formatRupiah(item.price)}</div>
+
+                        </div>
+
+                        <div class="cart-item-qty">
+
+                            <button class="cart-qty-btn" onclick="changeCartQty(${index}, -1)">-</button>
+
+                            <span class="cart-qty-val">${item.qty}</span>
+
+                            <button class="cart-qty-btn" onclick="changeCartQty(${index}, 1)">+</button>
+
+                        </div>
+
+                        <div class="cart-item-total">${formatRupiah(itemTotal)}</div>
+
+                        <button class="cart-item-remove" onclick="removeCartItem(${index})"><i class="fas fa-trash-alt"></i></button>
+
+                    `;
+
+                    cartBody.appendChild(div);
+
+                });
+
+            }
+
+
+
+            cartBadge.textContent = totalQty;
+
+            cartTotalEl.textContent = formatRupiah(totalHarga);
+
+        }
+
+
+
+        // Change quantity inside Cart
+
+        function changeCartQty(index, delta) {
+
+            cart[index].qty += delta;
+
+            if (cart[index].qty < 1) cart.splice(index, 1);
+
+            updateCartUI();
+
+        }
+
+
+
+        // Remove item from Cart
+
+        function removeCartItem(index) {
+
+            cart.splice(index, 1);
+
+            updateCartUI();
+
+        }
+
+
+
+        // Checkout to WhatsApp
+
+        btnCheckout.addEventListener('click', () => {
+
+            if (cart.length === 0) {
+
+                alert('Keranjang masih kosong!');
+
+                return;
+
+            }
+
+
+
+            let message = 'Halo Tokorotiku, saya ingin memesan:\n';
+
+            let total = 0;
+
+
+
+            cart.forEach(item => {
+
+                const itemTotal = item.price * item.qty;
+
+                total += itemTotal;
+
+                message += `- ${item.qty} ${item.name} (${formatRupiah(itemTotal)})\n`;
+
+            });
+
+
+
+            message += `\nTotal: ${formatRupiah(total)}`;
+
+
+
+            const encodedMessage = encodeURIComponent(message);
+
+            const waURL = `https://wa.me/6285136488738?text=${encodedMessage}`;
+
+            
+
+            window.open(waURL, '_blank');
+
+        });
+
+
+
+    </script>
+
+    <script>
+
+window.addEventListener("load", function() {
+
+  const preloader = document.getElementById("preloader");
+
+  if (preloader) {
+
+    preloader.classList.add("hide");
+
+  }
+
+});
+
+    </script>
+
 </body>
-</html>
+
+
+
+</html>    
