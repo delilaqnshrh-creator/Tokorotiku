@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk - Tokorotiku</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Login CSS -->
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <!-- ======== BACKGROUND LAYERS (Aesthetic Bakery) ======== -->
+    <div class="bg-image"></div>
+    <div class="bg-overlay"></div>
+    <div class="bg-glow"></div>
+
+    <!-- ======== TOAST CONTAINER ======== -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ======== LOGIN CARD (Glassmorphism) ======== -->
+    <div class="login-wrapper" id="loginWrapper">
+        <div class="login-card">
+            
+            <!-- Header -->
+            <div class="login-header">
+                <div class="login-icon">
+                    <i class="fas fa-bread-slice"></i>
+                </div>
+                <h2 class="login-title">Tokorotiku</h2>
+                <p class="login-subtitle">Masuk untuk memesan roti favoritmu</p>
+            </div>
+
+            <!-- Form -->
+            <form class="login-form" id="loginForm" novalidate>
+                
+                <!-- Nama -->
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="nama" class="form-input" placeholder="Masukkan nama kamu" autocomplete="name">
+                    </div>
+                    <div class="error-message" id="namaError"><i class="fas fa-exclamation-circle"></i> <span></span></div>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="email" class="form-input" placeholder="nama@email.com" autocomplete="email">
+                    </div>
+                    <div class="error-message" id="emailError"><i class="fas fa-exclamation-circle"></i> <span></span></div>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="password" class="form-input" placeholder="Minimal 6 karakter" autocomplete="current-password">
+                        <button type="button" class="toggle-password" id="togglePassword" aria-label="Tampilkan password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="error-message" id="passwordError"><i class="fas fa-exclamation-circle"></i> <span></span></div>
+                </div>
+
+                <!-- Remember Me -->
+                <div class="form-options">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" id="rememberMe">
+                        <span class="checkmark"></span>
+                        Ingat saya
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-login" id="btnLogin">
+                    <span class="btn-text">Masuk</span>
+                    <div class="btn-spinner" id="btnSpinner">
+                        <div class="spinner"></div>
+                    </div>
+                </button>
+            </form>
+
+            <!-- Footer -->
+            <div class="login-footer">
+                <p>Belum punya akun? <a href="#" class="register-link">Daftar Sekarang</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login JS -->
+    <script src="login.js"></script>
+</body>
+              </html>
