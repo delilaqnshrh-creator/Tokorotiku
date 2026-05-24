@@ -156,11 +156,59 @@
         .testi-card { background: rgba(255, 253, 248, 0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(212, 165, 116, 0.25); border-radius: 20px; padding: 32px; box-shadow: 0 4px 24px rgba(92, 61, 46, 0.06); transition: all 0.4s ease; height: 100%; display: flex; flex-direction: column; }
         .testi-card:hover { transform: translateY(-8px); box-shadow: 0 12px 40px rgba(92, 61, 46, 0.12), 0 0 20px rgba(212, 165, 116, 0.1); border-color: rgba(212, 165, 116, 0.5); }
         .testi-top { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
-        .testi-avatar { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold-soft); flex-shrink: 0; }
         .testi-avatar-initial { width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, var(--gold-soft), var(--gold)); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 1.2rem; flex-shrink: 0; }
         .testi-name { font-weight: 600; color: var(--brown-dark); font-size: 1.05rem; }
         .testi-stars { color: var(--gold); font-size: 0.85rem; margin-top: 4px; }
         .testi-text { color: var(--text-medium); font-size: 1rem; line-height: 1.7; position: relative; padding-left: 20px; border-left: 3px solid var(--gold-soft); margin-top: auto; }
+        .testi-fav-product { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; padding: 4px 12px; background: rgba(212, 165, 116, 0.12); border-radius: 20px; font-size: 0.8rem; color: var(--brown-medium); font-weight: 500; }
+
+        /* Dynamic testimonials container — invisible wrapper so grid works */
+        #dynamicTestimonials { display: contents; }
+
+        /* Testimoni new card animation */
+        @keyframes testiFadeIn { from { opacity: 0; transform: translateY(20px) scale(0.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        .testi-card-new { animation: testiFadeIn 0.6s ease forwards; }
+
+        /* ======== MODAL TESTIMONI (GLASSMORPHISM) ======== */
+        .modal-overlay { position: fixed; inset: 0; background: rgba(62, 39, 35, 0.45); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 9000; display: none; align-items: center; justify-content: center; padding: 20px; }
+        .modal-overlay.show { display: flex; }
+        .modal-glass { background: rgba(255, 253, 248, 0.88); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(212, 165, 116, 0.3); border-radius: 24px; box-shadow: 0 24px 80px rgba(92, 61, 46, 0.25), 0 0 40px rgba(212, 165, 116, 0.08); padding: 40px; max-width: 500px; width: 100%; position: relative; animation: modalPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); overflow: hidden; }
+        @keyframes modalPop { from { opacity: 0; transform: scale(0.85) translateY(30px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+        .modal-glass .modal-close { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; border-radius: 50%; background: rgba(212, 165, 116, 0.15); border: none; color: var(--brown-dark); font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; z-index: 5; }
+        .modal-glass .modal-close:hover { background: rgba(212, 165, 116, 0.3); transform: rotate(90deg); }
+        .modal-glass h3 { font-size: 1.5rem; color: var(--brown-dark); margin-bottom: 6px; text-align: center; }
+        .modal-glass .modal-sub { text-align: center; color: var(--text-light); font-size: 0.95rem; margin-bottom: 28px; line-height: 1.6; }
+        .modal-glass .modal-icon-top { text-align: center; font-size: 2.5rem; margin-bottom: 16px; }
+
+        .form-group-testi { margin-bottom: 20px; }
+        .form-group-testi label { display: block; font-weight: 600; font-size: 0.9rem; color: var(--brown-dark); margin-bottom: 8px; }
+        .form-group-testi .form-control-glass { width: 100%; padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(212, 165, 116, 0.3); background: rgba(255, 248, 231, 0.5); color: var(--text-dark); font-size: 0.95rem; font-family: 'DM Sans', sans-serif; transition: all 0.3s ease; outline: none; }
+        .form-group-testi .form-control-glass:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.15); background: rgba(255, 248, 231, 0.8); }
+        .form-group-testi textarea.form-control-glass { resize: vertical; min-height: 100px; }
+        .form-group-testi select.form-control-glass { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%235C3D2E' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+
+        .star-rating { display: flex; gap: 8px; margin-top: 4px; }
+        .star-rating .star { font-size: 2rem; color: var(--cream-dark); cursor: pointer; transition: all 0.25s ease; }
+        .star-rating .star:hover, .star-rating .star.hovered { color: var(--gold-soft); transform: scale(1.15); }
+        .star-rating .star.selected { color: var(--gold); transform: scale(1.1); }
+        @keyframes starPop { 0% { transform: scale(1); } 50% { transform: scale(1.35); } 100% { transform: scale(1.1); } }
+        .star-rating .star.pop { animation: starPop 0.35s ease; }
+
+        .btn-submit-testi { width: 100%; padding: 14px; border: none; border-radius: 14px; background: linear-gradient(135deg, var(--gold), var(--brown-light)); color: #FFFFFF; font-weight: 700; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(212, 165, 116, 0.35); display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 8px; }
+        .btn-submit-testi:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(212, 165, 116, 0.45); }
+        .btn-submit-testi:active { transform: translateY(-1px); }
+
+        .thankyou-actions { display: flex; gap: 12px; margin-top: 24px; }
+        .thankyou-actions button { flex: 1; padding: 14px; border-radius: 14px; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: all 0.3s ease; border: none; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .btn-write-testi { background: linear-gradient(135deg, var(--gold), var(--brown-light)); color: #FFFFFF; box-shadow: 0 4px 16px rgba(212, 165, 116, 0.35); }
+        .btn-write-testi:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(212, 165, 116, 0.45); }
+        .btn-skip-testi { background: rgba(212, 165, 116, 0.12); color: var(--brown-medium); }
+        .btn-skip-testi:hover { background: rgba(212, 165, 116, 0.2); }
+
+        .modal-particles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; border-radius: 24px; }
+        .modal-particles .particle { position: absolute; opacity: 0.08; font-size: 1.2rem; color: var(--gold); animation: floatParticle linear infinite; }
+        @keyframes floatParticle { 0% { transform: translateY(100%) rotate(0deg); opacity: 0; } 10% { opacity: 0.1; } 90% { opacity: 0.1; } 100% { transform: translateY(-100%) rotate(360deg); opacity: 0; } }
+        .modal-glass > *:not(.modal-particles):not(.modal-close) { position: relative; z-index: 1; }
 
         /* LOKASI */
         .map-wrapper { border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-card); border: 3px solid rgba(212, 165, 116, 0.2); }
@@ -208,6 +256,9 @@
 
         @media (max-width: 768px) {
             .section-padding { padding: 70px 0; } .menu-card-img { height: 180px; } .about-img-wrapper img { height: 280px; } .map-wrapper iframe { height: 300px; } .cart-dropdown { width: 320px; right: -50px; }
+            .modal-glass { padding: 28px 24px; }
+            .star-rating .star { font-size: 1.6rem; }
+            .thankyou-actions { flex-direction: column; }
         }
     </style>
 </head>
@@ -318,9 +369,15 @@
                 <div class="section-divider"></div>
                 <p class="section-desc">Pendapat pelanggan setia kami yang selalu menikmati kebahagiaan di setiap gigitan.</p>
             </div>
-            <div class="row g-4">
-                <!-- Testimoni 1 -->
-                <div class="col-lg-4 col-md-6 fade-up">
+            <div class="row g-4" id="testiList">
+
+                <!-- ===== DYNAMIC TESTIMONIALS (dari localStorage) ===== -->
+                <div id="dynamicTestimonials"></div>
+
+                <!-- ===== DEFAULT TESTIMONIALS (hardcoded, TIDAK PERNAH DIHAPUS JS) ===== -->
+
+                <!-- Testimoni 1: Nyoman Ayu Carmen -->
+                <div class="col-lg-4 col-md-6 fade-up testi-default">
                     <div class="testi-card">
                         <div class="testi-top">
                             <div class="testi-avatar-initial">NA</div>
@@ -330,10 +387,12 @@
                             </div>
                         </div>
                         <p class="testi-text">Croissant Butter-nya tuh bener-bener love at first bite! Lembut banget di dalem, tapi luarnya tetap renyah. Aroma butter-nya mantap, kerasa bahan-bahannya premium. Worth it banget sama harganya, suka dan selalu beli ini.</p>
+                        <div class="testi-fav-product"><i class="fas fa-heart" style="color:var(--gold);font-size:0.7rem;"></i> Croissant Butter</div>
                     </div>
                 </div>
-                <!-- Testimoni 2 -->
-                <div class="col-lg-4 col-md-6 fade-up">
+
+                <!-- Testimoni 2: Anh Keonho -->
+                <div class="col-lg-4 col-md-6 fade-up testi-default">
                     <div class="testi-card">
                         <div class="testi-top">
                             <div class="testi-avatar-initial">AK</div>
@@ -343,10 +402,12 @@
                             </div>
                         </div>
                         <p class="testi-text">Pertama kali coba Bomboloni Vanila, langsung jadi favorit! Isi krem-nya juicy dan gak bikin enek. Pelayanannya ramah, rotinya fresh terus!</p>
+                        <div class="testi-fav-product"><i class="fas fa-heart" style="color:var(--gold);font-size:0.7rem;"></i> Bomboloni Vanila</div>
                     </div>
                 </div>
-                <!-- Testimoni 3 -->
-                <div class="col-lg-4 col-md-6 fade-up">
+
+                <!-- Testimoni 3: Sinichi Kudo — TYPO SUDAH DIPERBAIKI -->
+                <div class="col-lg-4 col-md-6 fade-up testi-default">
                     <div class="testi-card">
                         <div class="testi-top">
                             <div class="testi-avatar-initial">SK</div>
@@ -355,9 +416,11 @@
                                 <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                             </div>
                         </div>
-                        <p class="testi-text">Roti Coklatnya enak banget, rotinys lembut coklatnya lumer.Best</p>
+                        <p class="testi-text">Roti Coklatnya enak banget, rotinya lembut coklatnya lumer. Best!</p>
+                        <div class="testi-fav-product"><i class="fas fa-heart" style="color:var(--gold);font-size:0.7rem;"></i> Roti Coklat</div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -392,6 +455,70 @@
     </footer>
 
     <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- ======== MODAL: THANK YOU AFTER CHECKOUT ======== -->
+    <div class="modal-overlay" id="thankYouModal">
+        <div class="modal-glass">
+            <div class="modal-particles" id="thankYouParticles"></div>
+            <button class="modal-close" onclick="closeThankYouModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-icon-top">🍞✨</div>
+            <h3>Terima Kasih Sudah Memesan di Tokorotiku!</h3>
+            <p class="modal-sub">Bagikan pengalamanmu setelah menikmati roti kami. Testimoni kamu sangat berarti untuk kami!</p>
+            <div class="thankyou-actions">
+                <button class="btn-write-testi" onclick="openTestiForm()"><i class="fas fa-pen-fancy"></i> Tulis Testimoni</button>
+                <button class="btn-skip-testi" onclick="closeThankYouModal()"><i class="fas fa-times"></i> Nanti Saja</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======== MODAL: FORM TESTIMONI ======== -->
+    <div class="modal-overlay" id="testiFormModal">
+        <div class="modal-glass">
+            <div class="modal-particles" id="testiFormParticles"></div>
+            <button class="modal-close" onclick="closeTestiForm()"><i class="fas fa-times"></i></button>
+            <div class="modal-icon-top">💛</div>
+            <h3>Tulis Testimoni Kamu</h3>
+            <p class="modal-sub">Ceritakan pengalamanmu menikmati roti Tokorotiku</p>
+
+            <div class="form-group-testi">
+                <label><i class="fas fa-user me-1" style="color:var(--gold);"></i> Nama Kamu</label>
+                <input type="text" class="form-control-glass" id="testiNameInput" readonly placeholder="Nama dari akun login">
+            </div>
+
+            <div class="form-group-testi">
+                <label><i class="fas fa-star me-1" style="color:var(--gold);"></i> Rating</label>
+                <div class="star-rating" id="starRating">
+                    <span class="star" data-value="1"><i class="fas fa-star"></i></span>
+                    <span class="star" data-value="2"><i class="fas fa-star"></i></span>
+                    <span class="star" data-value="3"><i class="fas fa-star"></i></span>
+                    <span class="star" data-value="4"><i class="fas fa-star"></i></span>
+                    <span class="star" data-value="5"><i class="fas fa-star"></i></span>
+                </div>
+            </div>
+
+            <div class="form-group-testi">
+                <label><i class="fas fa-comment-dots me-1" style="color:var(--gold);"></i> Testimoni Kamu</label>
+                <textarea class="form-control-glass" id="testiTextInput" placeholder="Tulis pengalamanmu di sini..."></textarea>
+            </div>
+
+            <div class="form-group-testi">
+                <label><i class="fas fa-bread-slice me-1" style="color:var(--gold);"></i> Produk Favorit <span style="font-weight:400;color:var(--text-light);">(optional)</span></label>
+                <select class="form-control-glass" id="testiFavProduct">
+                    <option value="">-- Pilih produk favorit --</option>
+                    <option value="Croissant Butter">Croissant Butter</option>
+                    <option value="Donat Gula">Donat Gula</option>
+                    <option value="Roti Keju">Roti Keju</option>
+                    <option value="Roti Coklat">Roti Coklat</option>
+                    <option value="Cinnamon Roll">Cinnamon Roll</option>
+                    <option value="Bomboloni Vanila">Bomboloni Vanila</option>
+                </select>
+            </div>
+
+            <button class="btn-submit-testi" onclick="submitTestimonial()">
+                <i class="fas fa-paper-plane"></i> Kirim Testimoni
+            </button>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -469,6 +596,7 @@
         function changeCartQty(index, delta) { cart[index].qty += delta; if (cart[index].qty < 1) cart.splice(index, 1); saveCart(); renderCart(); }
         function removeCartItem(index) { cart.splice(index, 1); saveCart(); renderCart(); }
 
+        // ======== CHECKOUT WHATSAPP + TRIGGER TESTIMONI MODAL ========
         document.getElementById('btnCheckoutWA').addEventListener('click', () => {
             if(cart.length === 0) return;
             const user = JSON.parse(localStorage.getItem('tokorotiku_user'));
@@ -477,7 +605,9 @@
             cart.forEach((item, i) => { const sub = item.price * item.qty; totalHarga += sub; pesananText += `${i+1}. ${item.name} x${item.qty} = ${formatRupiah(sub)}\n`; });
             const message = `Halo Tokorotiku, saya ingin memesan:\n\nNama: ${user.name}\n\nPesanan:\n${pesananText}\nTotal Harga: ${formatRupiah(totalHarga)}\n\nTerima kasih.`;
             window.open(`https://wa.me/6285136488738?text=${encodeURIComponent(message)}`, '_blank');
-            cart = []; saveCart(); renderCart(); cartDropdown.classList.remove('show'); showToast('success', 'Pesanan berhasil dikirim ke WhatsApp!');
+            cart = []; saveCart(); renderCart(); cartDropdown.classList.remove('show');
+            showToast('success', 'Pesanan berhasil dikirim ke WhatsApp!');
+            setTimeout(() => openThankYouModal(), 800);
         });
 
         document.querySelectorAll('.menu-card').forEach(card => {
@@ -492,7 +622,288 @@
         document.getElementById('cartCloseBtn').addEventListener('click', () => cartDropdown.classList.remove('show'));
         document.addEventListener('click', (e) => { if (!cartDropdown.contains(e.target) && !document.getElementById('cartToggleBtn').contains(e.target)) cartDropdown.classList.remove('show'); });
 
-        window.addEventListener('DOMContentLoaded', () => { checkAuth(); loadCart(); });
+
+        // ================================================================
+        // ======== SISTEM TESTIMONI — FIX: DEFAULT TETAP, DYNAMIC PREPEND ========
+        // ================================================================
+
+        // Nama testimoni yang ada di HTML (hardcoded) — dipakai untuk cek duplikat
+        const HARDCODED_TESTI_NAMES = ['Nyoman Ayu Carmen', 'Anh Keonho', 'Sinichi Kudo'];
+
+        // Data seed: testimoni tambahan yang diisi saat pertama kali (belum ada localStorage)
+        // TIDAK mengandung 3 nama hardcoded di atas
+        const SEED_TESTIMONIALS = [
+            { name: "Rina Wulandari", initial: "RW", rating: 5, text: "Cinnamon Roll-nya wangi banget kayu manisnya, rotinya empuk dan icing-nya pas! Cocok banget buat teman kopi sore. Pasti repeat order!", favProduct: "Cinnamon Roll" },
+            { name: "Budi Santoso", initial: "BS", rating: 4, text: "Donat Gulanya klasik tapi bikin nagih. Empuk, gak terlalu manis, dan murah meriah. Anak-anak di rumah suka semua!", favProduct: "Donat Gula" },
+            { name: "Dinda Maharani", initial: "DM", rating: 5, text: "Roti Kejunya juara! Kejunya lumer dan gurih, rotinya super soft. Udah jadi langganan tiap weekend. Packaging-nya juga cantik, cocok buat hadiah.", favProduct: "Roti Keju" }
+        ];
+
+        // --- Load testimonials dari localStorage ---
+        function loadTestimonials() {
+            const saved = localStorage.getItem('tokorotiku_testimonials');
+            if (saved) {
+                try {
+                    const data = JSON.parse(saved);
+                    if (Array.isArray(data) && data.length > 0) return data;
+                } catch(e) { /* fall through to seed */ }
+            }
+            // Pertama kali: seed dengan data tambahan
+            saveTestimonials(SEED_TESTIMONIALS);
+            return [...SEED_TESTIMONIALS];
+        }
+
+        // --- Save testimonials ke localStorage ---
+        function saveTestimonials(data) {
+            localStorage.setItem('tokorotiku_testimonials', JSON.stringify(data));
+        }
+
+        // --- Migrasi: hapus duplikat hardcoded yang nyasar ke localStorage lama ---
+        function migrateTestimonials() {
+            const saved = localStorage.getItem('tokorotiku_testimonials');
+            if (!saved) return;
+            try {
+                let data = JSON.parse(saved);
+                if (!Array.isArray(data)) return;
+                const before = data.length;
+                data = data.filter(t => !HARDCODED_TESTI_NAMES.includes(t.name));
+                if (data.length !== before) {
+                    saveTestimonials(data);
+                    console.log(`[Tokorotiku] Migrasi: ${before - data.length} duplikat hardcoded testimoni dihapus dari localStorage.`);
+                }
+            } catch(e) { /* ignore */ }
+        }
+
+        // --- Render testimoni dinamis ke #dynamicTestimonials SAJA ---
+        // TIDAK menyentuh .testi-default yang sudah ada di HTML
+        function renderDynamicTestimonials(highlightFirst = false) {
+            const container = document.getElementById('dynamicTestimonials');
+            if (!container) return;
+
+            // Hanya kosongkan container dinamis, BUKAN seluruh #testiList
+            container.innerHTML = '';
+
+            const testimonials = loadTestimonials();
+
+            testimonials.forEach((t, index) => {
+                const starsHtml = Array.from({length: 5}, (_, i) =>
+                    `<i class="fas fa-star" style="color:${i < t.rating ? 'var(--gold)' : 'var(--cream-dark)'}"></i>`
+                ).join('');
+
+                const favHtml = t.favProduct
+                    ? `<div class="testi-fav-product"><i class="fas fa-heart" style="color:var(--gold);font-size:0.7rem;"></i> ${t.favProduct}</div>`
+                    : '';
+
+                const isNew = highlightFirst && index === 0;
+
+                const col = document.createElement('div');
+                col.className = `col-lg-4 col-md-6 fade-up ${isNew ? 'testi-card-new visible' : ''}`;
+                col.innerHTML = `
+                    <div class="testi-card">
+                        <div class="testi-top">
+                            <div class="testi-avatar-initial">${t.initial}</div>
+                            <div>
+                                <div class="testi-name">${t.name}</div>
+                                <div class="testi-stars">${starsHtml}</div>
+                            </div>
+                        </div>
+                        <p class="testi-text">${t.text}</p>
+                        ${favHtml}
+                    </div>
+                `;
+                container.appendChild(col);
+            });
+
+            // Trigger animasi fade-up untuk card dinamis yang baru masuk viewport
+            setTimeout(() => {
+                container.querySelectorAll('.fade-up:not(.visible)').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight - 80) {
+                        el.classList.add('visible');
+                    }
+                });
+            }, 50);
+        }
+
+        // --- Floating Particles Generator ---
+        function generateParticles(containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            container.innerHTML = '';
+            const icons = ['🍞', '🥐', '🧁', '🍩', '✨', '🌾', '🥖'];
+            for (let i = 0; i < 12; i++) {
+                const particle = document.createElement('span');
+                particle.className = 'particle';
+                particle.textContent = icons[Math.floor(Math.random() * icons.length)];
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.fontSize = (0.8 + Math.random() * 1) + 'rem';
+                particle.style.animationDuration = (6 + Math.random() * 8) + 's';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // --- Modal: Thank You ---
+        function openThankYouModal() {
+            const user = JSON.parse(localStorage.getItem('tokorotiku_user'));
+            if (!user || !user.isLoggedIn) return;
+            generateParticles('thankYouParticles');
+            document.getElementById('thankYouModal').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeThankYouModal() {
+            document.getElementById('thankYouModal').classList.remove('show');
+            document.body.style.overflow = '';
+        }
+
+        // --- Modal: Form Testimoni ---
+        function openTestiForm() {
+            closeThankYouModal();
+
+            const user = JSON.parse(localStorage.getItem('tokorotiku_user'));
+            if (!user || !user.isLoggedIn) {
+                showToast('error', 'Kamu harus login terlebih dahulu.', 'login.html');
+                return;
+            }
+
+            document.getElementById('testiNameInput').value = user.name;
+
+            selectedRating = 0;
+            updateStarDisplay();
+            document.getElementById('testiTextInput').value = '';
+            document.getElementById('testiFavProduct').value = '';
+
+            generateParticles('testiFormParticles');
+
+            setTimeout(() => {
+                document.getElementById('testiFormModal').classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }, 300);
+        }
+
+        function closeTestiForm() {
+            document.getElementById('testiFormModal').classList.remove('show');
+            document.body.style.overflow = '';
+        }
+
+        // --- Star Rating Interaktif ---
+        let selectedRating = 0;
+        const starRating = document.getElementById('starRating');
+        const stars = starRating.querySelectorAll('.star');
+
+        stars.forEach(star => {
+            star.addEventListener('mouseenter', function() {
+                const val = parseInt(this.dataset.value);
+                stars.forEach(s => {
+                    const sv = parseInt(s.dataset.value);
+                    s.classList.toggle('hovered', sv <= val);
+                });
+            });
+
+            star.addEventListener('mouseleave', function() {
+                stars.forEach(s => s.classList.remove('hovered'));
+            });
+
+            star.addEventListener('click', function() {
+                selectedRating = parseInt(this.dataset.value);
+                updateStarDisplay();
+                this.classList.add('pop');
+                setTimeout(() => this.classList.remove('pop'), 350);
+            });
+        });
+
+        function updateStarDisplay() {
+            stars.forEach(s => {
+                const sv = parseInt(s.dataset.value);
+                s.classList.toggle('selected', sv <= selectedRating);
+            });
+        }
+
+        // --- Submit Testimoni ---
+        function submitTestimonial() {
+            const user = JSON.parse(localStorage.getItem('tokorotiku_user'));
+
+            if (!user || !user.isLoggedIn) {
+                showToast('error', 'Kamu harus login terlebih dahulu.', 'login.html');
+                return;
+            }
+
+            if (selectedRating === 0) {
+                showToast('error', 'Silakan pilih rating terlebih dahulu ⭐');
+                return;
+            }
+
+            const text = document.getElementById('testiTextInput').value.trim();
+
+            if (!text) {
+                showToast('error', 'Testimoni tidak boleh kosong ✍️');
+                return;
+            }
+
+            const favProduct = document.getElementById('testiFavProduct').value;
+            const name = user.name;
+            const nameWords = name.trim().split(/\s+/);
+            const initial = nameWords.length >= 2
+                ? nameWords[0].charAt(0).toUpperCase() + nameWords[nameWords.length - 1].charAt(0).toUpperCase()
+                : name.charAt(0).toUpperCase();
+
+            const newTesti = {
+                name: name,
+                initial: initial,
+                rating: selectedRating,
+                text: text,
+                favProduct: favProduct || ''
+            };
+
+            // Simpan ke localStorage (paling atas / unshift)
+            const testimonials = loadTestimonials();
+            testimonials.unshift(newTesti);
+            saveTestimonials(testimonials);
+
+            // Tutup modal form
+            closeTestiForm();
+
+            // Render ulang HANYA container dinamis
+            renderDynamicTestimonials(true);
+
+            showToast('success', 'Terima kasih atas testimoni kamu ');
+
+            // Scroll ke section testimoni
+            setTimeout(() => {
+                document.getElementById('testimoni').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 400);
+
+            // Reset rating
+            selectedRating = 0;
+        }
+
+        // --- Close modal on overlay click ---
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('show');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
+        // --- Close modal on Escape key ---
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay.show').forEach(m => {
+                    m.classList.remove('show');
+                });
+                document.body.style.overflow = '';
+            }
+        });
+
+
+        // ======== INIT ========
+        window.addEventListener('DOMContentLoaded', () => {
+            checkAuth();
+            loadCart();
+            migrateTestimonials();   // Bersihkan duplikat dari localStorage versi lama
+            renderDynamicTestimonials(); // Render testimoni dari localStorage ke #dynamicTestimonials
+        });
     </script>
 </body>
     </html>
