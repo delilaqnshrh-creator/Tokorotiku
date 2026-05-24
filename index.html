@@ -329,7 +329,7 @@
                                 <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                             </div>
                         </div>
-                        <p class="testi-text">Croissant Butter-nya tuh bener-bener love at first bite! Lembut banget di dalem, tapi luarnya tetap renyah. Aroma butter-nya juara, kerasa bahan-bahannya premium. Worth it banget sama harganya, suka selalu beli ini tiap mampir.</p>
+                        <p class="testi-text">Croissant Butter-nya tuh bener-bener love at first bite! Lembut banget di dalem, tapi luarnya tetap renyah. Aroma butter-nya mantap, kerasa bahan-bahannya premium. Worth it banget sama harganya, suka dan selalu beli ini.</p>
                     </div>
                 </div>
                 <!-- Testimoni 2 -->
@@ -342,7 +342,7 @@
                                 <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                             </div>
                         </div>
-                        <p class="testi-text">Pertama kali coba Bomboloni Vanila, langsung jadi favorit! Isi krem-nya juicy dan gak bikin enek. Tempatnya juga aesthetic banget buat foto-foto dulu sebelum makan. Pelayanannya ramah, rotinya fresh terus!</p>
+                        <p class="testi-text">Pertama kali coba Bomboloni Vanila, langsung jadi favorit! Isi krem-nya juicy dan gak bikin enek. Pelayanannya ramah, rotinya fresh terus!</p>
                     </div>
                 </div>
                 <!-- Testimoni 3 -->
@@ -355,7 +355,7 @@
                                 <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                             </div>
                         </div>
-                        <p class="testi-text">Roti Coklat dari sini emang the best. Teksturnya fluffy banget, coklatnya lumer pas digigit. Pagi-pagi mampir bawa pulang, aroma bakery-nya aja udah bikin semangat. Harga friendly, rasa bintang lima!</p>
+                        <p class="testi-text">Roti Coklatnya enak banget, rotinys lembut coklatnya lumer.Best</p>
                     </div>
                 </div>
             </div>
@@ -387,7 +387,7 @@
                 <div class="col-lg-2 col-md-4"><h5 class="footer-title">Lainnya</h5><a href="#testimoni" class="footer-link">Testimoni</a><a href="#lokasi" class="footer-link">Lokasi</a><a href="#kontak" class="footer-link">Kontak</a></div>
                 <div class="col-lg-4 col-md-4"><h5 class="footer-title">Kontak</h5><p style="font-size: 0.9rem; margin-bottom: 8px;"><i class="fas fa-map-marker-alt me-2" style="color: var(--gold);"></i> Pasar Kota Gede, Yogyakarta</p><p style="font-size: 0.9rem; margin-bottom: 0;"><i class="fab fa-whatsapp me-2" style="color: var(--gold);"></i> 085136488738</p></div>
             </div>
-            <div class="footer-bottom">&copy; 2025 Tokorotiku. Semua hak dilindungi.</div>
+            <div class="footer-bottom">&copy; 2026 Tokorotiku. Semua hak dilindungi.</div>
         </div>
     </footer>
 
@@ -475,7 +475,7 @@
             if(!user) { showToast('error', 'Sesi login habis.', 'login.html'); return; }
             let totalHarga = 0; let pesananText = '';
             cart.forEach((item, i) => { const sub = item.price * item.qty; totalHarga += sub; pesananText += `${i+1}. ${item.name} x${item.qty} = ${formatRupiah(sub)}\n`; });
-            const message = `Halo Tokorotiku, saya ingin memesan:\n\nNama Customer: ${user.name}\n\nPesanan:\n${pesananText}\nTotal Harga: ${formatRupiah(totalHarga)}\n\nTerima kasih.`;
+            const message = `Halo Tokorotiku, saya ingin memesan:\n\nNama: ${user.name}\n\nPesanan:\n${pesananText}\nTotal Harga: ${formatRupiah(totalHarga)}\n\nTerima kasih.`;
             window.open(`https://wa.me/6285136488738?text=${encodeURIComponent(message)}`, '_blank');
             cart = []; saveCart(); renderCart(); cartDropdown.classList.remove('show'); showToast('success', 'Pesanan berhasil dikirim ke WhatsApp!');
         });
